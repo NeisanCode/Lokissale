@@ -1,0 +1,128 @@
+/* Container principal */
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.9); /* fond semi-transparent */
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Titres des sections */
+.container h2,
+.container h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Paragraphes */
+.container p {
+    color: #34495e;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Formulaire */
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs et selects */
+.container input,
+.container select,
+.container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus sur input/select/textarea */
+.container input:focus,
+.container select:focus,
+.container textarea:focus {
+    border-color: #1abc9c;
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+}
+
+/* Textarea spécifique */
+.container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Boutons */
+.container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #1abc9c;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.container button:hover {
+    background: #16a085;
+}
+
+/* Messages d’erreur / succès */
+.container p#message,
+.container p#messageConnexion,
+.container p#messageResponse {
+    font-weight: bold;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Lien dans le formulaire ou sections */
+.container a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Sections internes */
+.container section {
+    margin-bottom: 25px;
+}
+
+/* Listes dans services ou infos */
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.container li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+}
