@@ -21,7 +21,10 @@ header {
     text-align: center;
 }
 
-header h1 { margin: 0; font-size: 2.5em; }
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
 
 /* Zone 2 : Navigation */
 nav {
@@ -43,7 +46,8 @@ nav a {
     padding: 5px 15px;
 }
 
-nav a.active, nav a:hover {
+nav a.active,
+nav a:hover {
     background: #e67e22;
     border-radius: 4px;
 }
@@ -55,7 +59,9 @@ nav a.active, nav a:hover {
 }
 
 /* Zone 4 : Cartes d'offres */
-.offres { padding: 40px 0; }
+.offres {
+    padding: 40px 0;
+}
 .grid-offres {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -69,7 +75,9 @@ nav a.active, nav a:hover {
     transition: transform 0.3s;
 }
 
-.card:hover { transform: translateY(-5px); }
+.card:hover {
+    transform: translateY(-5px);
+}
 
 .card img {
     width: 100%;
@@ -77,8 +85,14 @@ nav a.active, nav a:hover {
     object-fit: cover;
 }
 
-.card-content { padding: 15px; }
-.price { font-weight: bold; color: #e67e22; font-size: 1.2em; }
+.card-content {
+    padding: 15px;
+}
+.price {
+    font-weight: bold;
+    color: #e67e22;
+    font-size: 1.2em;
+}
 
 .btn {
     display: block;
@@ -105,8 +119,12 @@ footer {
     text-align: center;
 }
 
-.footer-links, .footer-contact { margin-bottom: 10px; }
-.footer-links a, .footer-contact a {
+.footer-links,
+.footer-contact {
+    margin-bottom: 10px;
+}
+.footer-links a,
+.footer-contact a {
     color: #333;
     text-decoration: none;
     margin: 0 5px;
@@ -114,6 +132,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .container { width: 95%; }
-    nav ul { flex-direction: column; }
+    .container {
+        width: 95%;
+    }
+    nav ul {
+        flex-direction: column;
+    }
 }
