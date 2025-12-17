@@ -17,8 +17,7 @@
 
             <label for="sexe">Sexe</label>
             <select id="sexe" name="sexe" required>
-                <option value="">-- Choisir --</option>
-                <option value="m">Homme</option>
+                <option value="m" selected>Homme</option>
                 <option value="f">Femme</option>
             </select>
 
