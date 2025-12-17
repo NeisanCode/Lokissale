@@ -1,5 +1,5 @@
 <footer class="footer">
-    <p>© LOKISALLE</p>
+    <p>© LOKISALLE | </p>
     <nav>
         <a href="mentions.php">Mentions légales</a> |
         <a href="cgv.php">CGV</a> |

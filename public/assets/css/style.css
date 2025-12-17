@@ -1,9 +1,16 @@
-/* Styles généraux */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "poppins", sans-serif;
 }
-
+@font-face {
+    font-family: "poppins";
+    src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 body {
     margin: 0;
     background-image: url("../images/background.jpg");
@@ -18,9 +25,15 @@ body {
     background: rgba(44, 62, 80, 0.9);
     color: white;
     text-align: center;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+.logo {
+    width: 60px;
+    height: 60px;
+    background: url(../images/logo.png) center/cover;
+}
 /* Menu de navigation */
 .menu {
     display: flex;
@@ -34,11 +47,12 @@ body {
     text-decoration: none;
 }
 
-.menu a:hover,
 .menu .active {
     background: #1abc9c;
 }
-
+.menu a:hover {
+    background: #1abc9c79;
+}
 /* Conteneur principal */
 .container {
     max-width: 600px;
@@ -96,6 +110,7 @@ body {
 
 /* Footer */
 .footer {
+    display: flex;
     background: rgba(44, 62, 80, 0.9);
     color: white;
     text-align: center;
