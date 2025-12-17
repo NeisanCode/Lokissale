@@ -1,5 +1,5 @@
-<?php require "inc/haut.inc.php" ?>
-<?php require "inc/menu.inc.php" ?>
+<?php require "public/inc/haut.inc.php" ?>
+<?php require "public/inc/menu.inc.php" ?>
 <main class="container">
     <!-- Section bienvenue -->
     <section class="bienvenue">
@@ -29,4 +29,4 @@
             contacter</a>
     </section>
 </main>
-<?php require "inc/bas.inc.php" ?>
+<?php require "public/inc/bas.inc.php" ?>
