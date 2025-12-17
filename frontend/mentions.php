@@ -1,0 +1,3 @@
+<?php
+// mentions.php
+?>

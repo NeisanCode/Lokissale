@@ -1,0 +1,3 @@
+<?php
+// reservation.php
+?>

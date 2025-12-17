@@ -1,0 +1,3 @@
+<?php
+// bas.inc.php
+?>

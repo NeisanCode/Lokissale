@@ -1,0 +1,3 @@
+<?php
+// motdepasseperdu.php
+?>

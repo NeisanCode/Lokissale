@@ -1,0 +1,3 @@
+<?php
+// haut.inc.php
+?>
