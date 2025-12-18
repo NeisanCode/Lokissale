@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/welcome.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
+    <link rel="stylesheet" href="assets/css/recherche.css">
     <title>LOKISALLE - Créer un compte</title>
 </head>
 
