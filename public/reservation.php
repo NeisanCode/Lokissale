@@ -70,7 +70,7 @@
 
             <!-- Exemple d'offre 3 -->
             <article class="offre-card">
-                <img src="images/salles/salle-marseille.jpg" alt="Salle Picasso Marseille">
+                <img src="assets/images/salle6.jpg" alt="Salle Picasso Marseille">
                 <div class="offre-content">
                     <h4>Salle Picasso – Marseille</h4>
                     <p>Espace lumineux avec vue sur mer, idéal pour conférences et présentations.</p>
