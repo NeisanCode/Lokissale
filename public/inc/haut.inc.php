@@ -16,4 +16,8 @@
     <header class="header">
         <div class="logo"></div>
         <h1>LOKISALLE</h1>
+        <div class="typewriter">
+            <span class="text">Lokisalle — L’espace parfait, au bon moment.</span>
+        </div>
+
     </header>
