@@ -1,32 +1,78 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
-<main class="container">
-    <!-- Section bienvenue -->
+
+<main class="container-large">
+    <!-- Présentation -->
     <section class="bienvenue">
         <h2>Bienvenue sur LOKISALLE</h2>
-        <p>LOKISALLE est votre plateforme de location de salles pour entreprises et particuliers.
-            Trouvez facilement la salle qui correspond à vos besoins, réservez en quelques clics et profitez d’un
-            service rapide et sécurisé.</p>
+
+        <p>
+            LOKISALLE est spécialisée dans la location de salles pour réunions,
+            séminaires, formations et événements professionnels ou privés.
+        </p>
+
+        <p>
+            Présente à Paris, Lyon et Marseille, notre plateforme vous permet
+            de réserver facilement des salles modernes et entièrement équipées.
+        </p>
     </section>
 
-    <!-- Section services ou fonctionnalités -->
-    <section class="services" style="margin-top:30px;">
-        <h3>Nos services</h3>
-        <ul style="list-style: none; padding: 0;">
-            <li>📍 Location de salles pour réunions, séminaires et événements</li>
-            <li>💻 Salles équipées avec matériel audiovisuel</li>
-            <li>🗓 Réservation simple et rapide en ligne</li>
-            <li>✅ Paiement sécurisé</li>
-        </ul>
-    </section>
+    <!-- Offres -->
+    <section class="offres">
+        <h3>Dernières offres disponibles</h3>
 
-    <!-- Section contact rapide / appel à l'action -->
-    <section class="contact-cta" style="margin-top:30px; text-align:center;">
-        <h3>Besoin d’aide ?</h3>
-        <p>Contactez-nous pour toute question ou réservation spéciale.</p>
-        <a href="contact.php"
-            style="display:inline-block; margin-top:10px; padding:12px 20px; background:#1abc9c; color:white; text-decoration:none; border-radius:4px;">Nous
-            contacter</a>
+        <div class="offres-grid">
+
+            <article class="offre-card">
+                <img src="assets/images/salle1.jpg" alt="Salle Cézanne Paris">
+
+                <div class="offre-content">
+                    <h4>Salle Cézanne – Paris</h4>
+                    <p>Salle moderne idéale pour réunions professionnelles.</p>
+                    <p><strong>Capacité :</strong> 20 personnes</p>
+                    <p><strong>Prix :</strong> 550 €</p>
+
+                    <div class="offre-actions">
+                        <a href="connexion.php">Se connecter</a>
+                        <a href="reservation_details.php?id_produit=1">Voir détails</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offre-card">
+                <img src="assets/images/salle2.jpg" alt="Salle Mozart Lyon">
+
+                <div class="offre-content">
+                    <h4>Salle Mozart – Lyon</h4>
+                    <p>Salle spacieuse pour formations et séminaires.</p>
+                    <p><strong>Capacité :</strong> 30 personnes</p>
+                    <p><strong>Prix :</strong> 620 €</p>
+
+                    <div class="offre-actions">
+                        <a href="connexion.php">Se connecter</a>
+                        <a href="reservation_details.php?id_produit=2">Voir détails</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offre-card">
+                <img src="assets/images/salle3.jpg" alt="Salle Picasso Marseille">
+
+                <div class="offre-content">
+                    <h4>Salle Picasso – Marseille</h4>
+                    <p>Salle élégante pour événements d’entreprise.</p>
+                    <p><strong>Capacité :</strong> 15 personnes</p>
+                    <p><strong>Prix :</strong> 450 €</p>
+
+                    <div class="offre-actions">
+                        <a href="connexion.php">Se connecter</a>
+                        <a href="reservation_details.php?id_produit=3">Voir détails</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
     </section>
 </main>
+
 <?php require "inc/bas.inc.php" ?>
