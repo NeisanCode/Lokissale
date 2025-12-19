@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/welcome.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
     <link rel="stylesheet" href="assets/css/recherche.css">
+    <link rel="stylesheet" href="assets/css/reservations_details.css">
     <title>LOKISALLE - Créer un compte</title>
 </head>
 

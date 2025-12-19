@@ -40,8 +40,8 @@ body {
     left: 50%;
     translate: -50% -50%;
     font-size: 15px;
-    /* color: #1f2d3d; */
-    color: white;
+    color: #1f2d3d;
+    /* color: white; */
     text-align: center;
     margin-top: 50px;
 }

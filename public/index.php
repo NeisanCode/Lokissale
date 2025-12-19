@@ -33,8 +33,8 @@
                     <p><strong>Prix :</strong> 550 €</p>
 
                     <div class="offre-actions">
-                        <a href="connexion.php">Se connecter</a>
                         <a href="reservation_details.php?id_produit=1">Voir détails</a>
+                        <a href="connexion.php">Se connecter</a>
                     </div>
                 </div>
             </article>
@@ -49,8 +49,8 @@
                     <p><strong>Prix :</strong> 620 €</p>
 
                     <div class="offre-actions">
-                        <a href="connexion.php">Se connecter</a>
                         <a href="reservation_details.php?id_produit=2">Voir détails</a>
+                        <a href="connexion.php">Se connecter</a>
                     </div>
                 </div>
             </article>
@@ -65,8 +65,8 @@
                     <p><strong>Prix :</strong> 450 €</p>
 
                     <div class="offre-actions">
-                        <a href="connexion.php">Se connecter</a>
                         <a href="reservation_details.php?id_produit=3">Voir détails</a>
+                        <a href="connexion.php">Se connecter</a>
                     </div>
                 </div>
             </article>
