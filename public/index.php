@@ -1,6 +1,6 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
-
+<?php require_once "../backend/back_index.php" ?>
 <main class="container-large">
     <!-- Présentation -->
     <section class="bienvenue">
@@ -19,11 +19,11 @@
 
     <!-- Offres -->
     <section class="offres">
-        <h>Nos 3 dernières offres</h>
+        <h3>Nos 3 dernières offres</h3>
 
         <div class="offres-grid">
-
-            <article class="offre-card">
+            <?= last_three_offers(); ?>
+            <!-- <article class="offre-card">
                 <img src="assets/images/salle1.jpg" alt="Salle Cézanne Paris">
 
                 <div class="offre-content">
@@ -72,7 +72,7 @@
                         <a href="connexion.php">Se connecter</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
         </div>
     </section>
