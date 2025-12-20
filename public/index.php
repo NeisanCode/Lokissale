@@ -1,6 +1,8 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
-<?php require_once "../backend/back_index.php" ?>
+<?php require_once "../backend/index.php" ?>
+
+
 <main class="container-large">
     <!-- Présentation -->
     <section class="bienvenue">
