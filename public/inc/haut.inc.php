@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/connexion.css">
     <link rel="stylesheet" href="assets/css/recherche.css">
     <link rel="stylesheet" href="assets/css/reservations_details.css">
+    <link rel="shortcut icon" href="assets/images/logo.ico">
     <title>LOKISALLE - Créer un compte</title>
 </head>
 
