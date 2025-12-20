@@ -20,5 +20,4 @@
         <div class="typewriter">
             <span class="text">Lokisalle — L’espace parfait, au bon moment.</span>
         </div>
-
     </header>

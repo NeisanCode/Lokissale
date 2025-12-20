@@ -15,7 +15,7 @@ function create_offer_salle(
 
             <div class="offre-content">
                 <h4>{$info_title}</h4>
-                <p>{$info_description}</p>
+                <p class="description-tronquee">{$info_description}</p>
                 <p><strong>Date :</strong> {$info_date}</p>
                 <p><strong>Capacité :</strong> {$info_capacity} personnes</p>
                 <p><strong>Prix :</strong> {$info_price} €</p>
@@ -49,9 +49,9 @@ function create_salle_options(array $salles): array
     return $new_array;
 
 }
-function last_three_offers(): string
+function get_salles(?int $limit = null): string
 {
-    $connected_db = get_data_from_database();
+    $connected_db = get_data_from_database($limit);
     $offers = create_salle_options($connected_db);
     $html = "";
     foreach ($offers as $offer) {
@@ -66,6 +66,12 @@ function last_three_offers(): string
         );
     }
     return $html;
-
 }
+function last_three_offers(): string
+{
+    $limit = 3;
+    return get_salles($limit);
+}
+$nana = get_salles();
+echo $nana;
 ?>

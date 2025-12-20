@@ -1,27 +1,31 @@
 <?php
-function get_data_from_database(): array
+function get_data_from_database(?int $limit=null): array
 {
     $user = "root";
     $pass = "";
     try {
 
         $db = new PDO("mysql:host=localhost:3306;dbname=lokissale", $user, $pass);
+
         $sql_command = "SELECT 
-                        *
-                    FROM (
-                        SELECT *,
-                            ROW_NUMBER() OVER (
-                                PARTITION BY id_salle
-                                ORDER BY date_depart DESC
-                            ) AS rn
-                        FROM produit
-                    ) p
-                    JOIN salle s ON s.id_salle = p.id_salle
-                    WHERE p.rn = 1
-                    ORDER BY p.date_depart DESC
-                    LIMIT 3;
-                    "
-        ;
+                            *
+                        FROM (
+                            SELECT *,
+                                ROW_NUMBER() OVER (
+                                    PARTITION BY id_salle
+                                    ORDER BY date_depart DESC
+                                ) AS rn
+                            FROM produit
+                        ) p
+                        JOIN salle s ON s.id_salle = p.id_salle
+                        WHERE p.rn = 1
+                        ORDER BY p.date_depart DESC";
+
+        // Ajouter le LIMIT seulement si défini
+        if ($limit !== null && $limit > 0) {
+            $sql_command .= " LIMIT " . intval($limit);
+        }
+
         $req = $db->query($sql_command);
         $res = $req->fetchAll(PDO::FETCH_ASSOC);
         return $res;
@@ -31,5 +35,4 @@ function get_data_from_database(): array
         return [];
     }
 }
-
 ?>

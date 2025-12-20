@@ -1,4 +1,9 @@
-/* ===== PAGE ACCUEIL – OFFRES ===== */
+.description-tronquee {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
 
 .container-large {
     max-width: 1100px;
@@ -7,6 +12,7 @@
     background: rgba(255, 255, 255, 0.9);
     padding: 25px;
     border-radius: 5px;
+    flex: 1;
 }
 
 /* Section présentation */

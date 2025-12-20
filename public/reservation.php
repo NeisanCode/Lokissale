@@ -1,5 +1,6 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
+<?php require "../backend/salle.php" ?>
 
 <main class="container-large">
     <!-- Présentation -->
@@ -35,7 +36,7 @@
 
         <div class="offres-grid">
             <!-- Exemple d'offre 1 -->
-            <article class="offre-card">
+            <!-- <article class="offre-card">
                 <img src="assets/images/salle4.jpg" alt="Salle Cézanne Paris">
                 <div class="offre-content">
                     <h4>Salle Cézanne – Paris</h4>
@@ -49,10 +50,10 @@
                         <a href="reservation_details.php?id_produit=1">Voir détails</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Exemple d'offre 2 -->
-            <article class="offre-card">
+            <!-- <article class="offre-card">
                 <img src="assets/images/salle5.jpg" alt="Salle Mozart Lyon">
                 <div class="offre-content">
                     <h4>Salle Mozart – Lyon</h4>
@@ -66,10 +67,10 @@
                         <a href="reservation_details.php?id_produit=2">Voir détails</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Exemple d'offre 3 -->
-            <article class="offre-card">
+            <!-- <article class="offre-card">
                 <img src="assets/images/salle6.jpg" alt="Salle Picasso Marseille">
                 <div class="offre-content">
                     <h4>Salle Picasso – Marseille</h4>
@@ -83,10 +84,10 @@
                         <a href="reservation_details.php?id_produit=3">Voir détails</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Exemple d'offre 4 -->
-            <article class="offre-card">
+            <!-- <article class="offre-card">
                 <img src="images/salles/salle-paris2.jpg" alt="Salle Van Gogh Paris">
                 <div class="offre-content">
                     <h4>Salle Van Gogh – Paris</h4>
@@ -100,12 +101,13 @@
                         <a href="reservation_details.php?id_produit=4">Voir détails</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Si l'utilisateur est connecté, remplacer le lien "Se connecter" par -->
             <!-- <a href="panier.php?id_produit=X">Ajouter au panier</a> -->
 
             <!-- Ajouter d'autres offres dynamiquement via PHP -->
+            <?= get_salles(); ?>
         </div>
     </section>
 </main>
