@@ -19,7 +19,7 @@
 
     <!-- Offres -->
     <section class="offres">
-        <h3>Dernières offres disponibles</h3>
+        <h>Nos 3 dernières offres</h>
 
         <div class="offres-grid">
 
@@ -29,6 +29,7 @@
                 <div class="offre-content">
                     <h4>Salle Cézanne – Paris</h4>
                     <p>Salle moderne idéale pour réunions professionnelles.</p>
+                    <p><strong>Date :</strong> </p>
                     <p><strong>Capacité :</strong> 20 personnes</p>
                     <p><strong>Prix :</strong> 550 €</p>
 
@@ -45,6 +46,7 @@
                 <div class="offre-content">
                     <h4>Salle Mozart – Lyon</h4>
                     <p>Salle spacieuse pour formations et séminaires.</p>
+                    <p><strong>Date :</strong> </p>
                     <p><strong>Capacité :</strong> 30 personnes</p>
                     <p><strong>Prix :</strong> 620 €</p>
 
@@ -61,6 +63,7 @@
                 <div class="offre-content">
                     <h4>Salle Picasso – Marseille</h4>
                     <p>Salle élégante pour événements d’entreprise.</p>
+                    <p><strong>Date :</strong> </p>
                     <p><strong>Capacité :</strong> 15 personnes</p>
                     <p><strong>Prix :</strong> 450 €</p>
 
