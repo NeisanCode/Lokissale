@@ -51,7 +51,8 @@ function create_salle_options(array $salles): array
 }
 function get_salles(?int $limit = null): string
 {
-    $connected_db = get_data_from_database($limit);
+    global $db;
+    $connected_db = get_data_from_database($db, $limit);
     $offers = create_salle_options($connected_db);
     $html = "";
     foreach ($offers as $offer) {
