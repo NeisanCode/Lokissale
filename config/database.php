@@ -40,11 +40,11 @@ function get_product_details(PDO $db, int $id_product): array
                 p.date_depart,
                 p.date_arrivee,
                 s.*,
-                a.note,
+                a.note AS avis_note,
                 a.commentaire,
-                a.date,
-                m.nom,
-                m.prenom
+                a.date AS avis_date,
+                m.nom AS membre_nom,
+                m.prenom AS membre_prenom
                 FROM produit p
                 LEFT JOIN salle s ON p.id_salle = s.id_salle
                 LEFT JOIN avis a ON a.id_salle = s.id_salle

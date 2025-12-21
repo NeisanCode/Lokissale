@@ -91,7 +91,7 @@
             <article class="avis-item">
                 <div class="avis-header">
                     <strong class="avis-auteur">Jean_Dupont</strong>
-                    <span class="avis-note">⭐⭐⭐⭐⭐ (5/5)</span>
+                    <span class="avis-note"><?=$star_note?></span>
                     <span class="avis-date">15/12/2025</span>
                 </div>
                 <p class="avis-commentaire">
