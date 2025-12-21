@@ -32,14 +32,22 @@ function get_data_from_database(PDO $db, ?int $limit = null): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function get_prod_by_id(PDO $db, int $id_product): array{
+function get_prod_by_id(PDO $db, int $id_product): array
+{
+
     $stmt = $db->prepare(
-        "SELECT * FROM produit AS p
-                JOIN salle AS s ON p.id_produit = s.id_salle
-                WHERE p.id_produit = :id_produit;"
+        "SELECT *
+            FROM produit AS p
+                JOIN salle AS s ON p.id_salle = s.id_salle
+            WHERE p.id_produit = :id_produit;
+            "
     );
     $stmt->execute(['id_produit' => $id_product]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt= $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($stmt === false) {
+        die("Produit non trouvé.");
+    }
+    return $stmt;
 }
 
 

@@ -1,6 +1,7 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
-<?php ?>
+<?php require "../backend/product.php"?>
+
 
 <main class="container-large">
     <!-- Détails de la salle -->

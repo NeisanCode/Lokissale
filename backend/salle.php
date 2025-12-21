@@ -73,6 +73,4 @@ function last_three_offers(): string
     $limit = 3;
     return get_salles($limit);
 }
-$nana = get_salles();
-echo $nana;
 ?>
