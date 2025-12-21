@@ -8,7 +8,8 @@ if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
 $product_details = get_prod_by_id($db, $id_product);
 
 
-$title = $product_details['titre'] . " - " . $product_details['ville'];
+
+$title = $product_details['titre'];
 $description = $product_details['description'];
 
 $date_depart = explode(" ", $product_details['date_depart'])[0];
@@ -24,4 +25,7 @@ $ville = $product_details['ville'];
 $adresse = $product_details['adresse'];
 $pays = $product_details['pays'];
 $etat = $product_details['etat'];
+$titre_page = "$title - $ville";
+$prix_ht = number_format((float)$prix, 2, '.', '');
+$prix_ttc = number_format((float)($prix * 1.2), 2, '.', ''); // TVA à 20%
 ?>

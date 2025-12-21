@@ -1,6 +1,6 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
-<?php require "../backend/product.php"?>
+<?php require "../backend/product.php" ?>
 
 
 <main class="container-large">
@@ -9,25 +9,23 @@
         <div class="details-grid">
             <!-- Image principale -->
             <div class="details-image">
-                <img src="assets/images/salle3.jpg" alt="Salle Cézanne Paris">
+                <img src="assets/images/<?= $photo ?>" alt="<?= $title ?>">
             </div>
 
             <!-- Informations principales -->
             <div class="details-info">
-                <h2>Salle Cézanne – Paris</h2>
+                <h2><?= $titre_page ?></h2>
                 <p class="details-description">
-                    Salle moderne et lumineuse idéale pour vos réunions professionnelles, séminaires
-                    et événements d'entreprise. Équipée des dernières technologies : vidéoprojecteur,
-                    système audio, wifi haut débit et climatisation.
+                    <?= $description ?>
                 </p>
 
                 <div class="details-specs">
-                    <p><strong>📍 Ville :</strong> Paris (75015)</p>
-                    <p><strong>👥 Capacité :</strong> 20 personnes</p>
+                    <p><strong>📍 Ville :</strong> <?= $ville ?> - <?= $cp ?></p>
+                    <p><strong>👥 Capacité :</strong> <?= $capacite ?> personnes</p>
                     <p><strong>🏷️ Catégorie :</strong> Professionnelle</p>
-                    <p><strong>📅 Dates :</strong> Du 22/01/2026 au 27/01/2026</p>
-                    <p><strong>💰 Prix HT :</strong> <?php echo $prix_ht; ?> €</p>
-                    <p><strong>💳 Prix TTC :</strong> <span class="prix-ttc"><?php echo $prix_ttc; ?> €</span></p>
+                    <p><strong>📅 Dates :</strong> <?= $date_salle ?></p>
+                    <p><strong>💰 Prix HT :</strong> <?= $prix_ht; ?> €</p>
+                    <p><strong>💳 Prix TTC :</strong> <span class="prix-ttc"><?= $prix_ttc; ?> €</span></p>
                 </div>
 
                 <!-- Bouton d'ajout au panier -->
@@ -52,10 +50,10 @@
         <!-- Informations complémentaires -->
         <div class="details-complementaires">
             <h3>📋 Informations complémentaires</h3>
-            <p><strong>Adresse :</strong> 300 Boulevard de Vaugirard, 75015 Paris, France</p>
-            <p><strong>Équipements :</strong> Vidéoprojecteur, Paper board, Wifi, Climatisation, Machine à café</p>
-            <p><strong>Accès :</strong> Métro ligne 12, station Vaugirard. Parking disponible à proximité.</p>
-            <p><strong>Services inclus :</strong> Ménage, Support technique, Accueil personnalisé</p>
+            <p><strong>Adresse :</strong> <?= $adresse ?>, <?= $cp ?> <?= $ville ?>, <?= $pays ?></p>
+            <!-- <p><strong>Équipements :</strong> Vidéoprojecteur, Paper board, Wifi, Climatisation, Machine à café</p> -->
+            <!-- <p><strong>Accès :</strong> Métro ligne 12, station Vaugirard. Parking disponible à proximité.</p> -->
+            <!-- <p><strong>Services inclus :</strong> Ménage, Support technique, Accueil personnalisé</p> -->
 
             <!-- Plan d'accès (optionnel) -->
             <div class="plan-acces">
