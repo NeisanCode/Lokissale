@@ -52,7 +52,7 @@ function create_salle_options(array $salles): array
 function get_salles(?int $limit = null): string
 {
     global $db;
-    $connected_db = get_data_from_database($db, $limit);
+    $connected_db = get_latest_products_per_room($db, $limit);
     $offers = create_salle_options($connected_db);
     $html = "";
     foreach ($offers as $offer) {

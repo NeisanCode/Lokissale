@@ -1,14 +1,13 @@
 <?php
 require "../config/database.php";
+
 if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
     $id_product = (int) $_GET['id_produit'];
 } else {
+    echo "Un problème est survenu.";
     die("ID de produit invalide.");
 }
-$product_details = get_prod_by_id($db, $id_product);
-
-
-
+$product_details = get_product_details($db, $id_product);
 $title = $product_details['titre'];
 $description = $product_details['description'];
 
@@ -26,6 +25,13 @@ $adresse = $product_details['adresse'];
 $pays = $product_details['pays'];
 $etat = $product_details['etat'];
 $titre_page = "$title - $ville";
-$prix_ht = number_format((float)$prix, 2, '.', '');
-$prix_ttc = number_format((float)($prix * 1.2), 2, '.', ''); // TVA à 20%
+$prix_ht = number_format((float) $prix, 2, '.', '');
+$prix_ttc = number_format((float) ($prix * 1.2), 2, '.', ''); // TVA à 20%
+
+
+
+
+$note = str_repeat("⭐", 5);
+
+
 ?>

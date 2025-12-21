@@ -8,7 +8,7 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-function get_data_from_database(PDO $db, ?int $limit = null): array
+function get_latest_products_per_room(PDO $db, ?int $limit = null): array
 {
     $sql_command = "SELECT 
                         *
@@ -32,23 +32,32 @@ function get_data_from_database(PDO $db, ?int $limit = null): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function get_prod_by_id(PDO $db, int $id_product): array
+function get_product_details(PDO $db, int $id_product): array
 {
-
     $stmt = $db->prepare(
-        "SELECT *
-            FROM produit AS p
-                JOIN salle AS s ON p.id_salle = s.id_salle
-            WHERE p.id_produit = :id_produit;
+        "SELECT 
+                p.prix,
+                p.date_depart,
+                p.date_arrivee,
+                s.*,
+                a.note,
+                a.commentaire,
+                a.date,
+                m.nom,
+                m.prenom
+                FROM produit p
+                LEFT JOIN salle s ON p.id_salle = s.id_salle
+                LEFT JOIN avis a ON a.id_salle = s.id_salle
+                LEFT JOIN membre m ON m.id_membre = a.id_membre
+                WHERE id_produit = :id_produit;
             "
     );
     $stmt->execute(['id_produit' => $id_product]);
-    $stmt= $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($stmt === false) {
         die("Produit non trouvé.");
     }
     return $stmt;
 }
 
-
-?>
+print_r(get_product_details($db, 1));
