@@ -1,5 +1,6 @@
 <?php
-require "../config/database.php";
+require_once "../config/database.php";
+
 function create_offer_salle(
     string $photo,
     string $info_title,
@@ -14,7 +15,8 @@ function create_offer_salle(
 
     $title = "$info_title - $infoville";
     $date_depart = explode(" ", $info_date_depart)[0];
-    $date_arrivee = explode(" ", $info_date_depart)[0];
+    $date_arrivee = explode(" ", $info_date_arrivee)[0];
+    [$date_arrivee, $date_depart] = [style_date($date_arrivee), style_date($date_depart)];
     $date_salle = "Du $date_depart au $date_arrivee";
     return <<<HTML
         <article class="offre-card">

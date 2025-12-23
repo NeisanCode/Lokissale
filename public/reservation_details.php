@@ -34,7 +34,7 @@
                     // SI L'UTILISATEUR EST CONNECTÉ (membre ou admin)
                     // if(isset($_SESSION['membre'])) {
                     ?>
-                    <!-- <a href="panier.php?id_produit=<?= $id_produit; ?>" class="btn-panier">Ajouter au panier</a> -->
+                    <!-- <a href="panier.php?id_produit=<?= $id_product; ?>" class="btn-panier">Ajouter au panier</a> -->
                     <?php
                     // } else {
                     ?>

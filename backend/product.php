@@ -1,5 +1,9 @@
 <?php
-require "../backend/salle.php";
+require_once "../config/database.php";
+require_once "../backend/salle.php";
+require_once "../backend/utils.php";
+
+
 
 if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
     $id_product = (int) $_GET['id_produit'];
@@ -16,7 +20,7 @@ if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
 // ---salle details variables
 $title = $product['titre'];
 $description = $product['description'];
-$date_salle = "Du $date_depart au $date_arrivee";
+
 
 $photo = strtolower($product['photo']);
 $capacite = $product['capacite'];
@@ -29,12 +33,15 @@ $pays = $product['pays'];
 // ---product details variables
 $prix = $product['prix'];
 $titre_page = "$title - $ville";
+
 $prix_ht = number_format((float) $prix, 2, '.', '');
 $prix_ttc = number_format((float) ($prix * 1.2), 2, '.', ''); // TVA à 20%
 
 $date_depart = explode(" ", $product['date_depart'])[0];
 $date_arrivee = explode(" ", $product['date_arrivee'])[0];
+[$date_arrivee, $date_depart] = [style_date($date_arrivee), style_date($date_depart)];
 
+$date_salle = "Du $date_depart au $date_arrivee";
 function get_rate(): string
 {
     global $avis;
@@ -85,8 +92,10 @@ function get_similar_offers(): string
             $offer['capacite'],
             $offer['prix'],
             $offer['id_produit']
-        );;
+        );
+        ;
     }
     return $html;
 }
-;
+
+

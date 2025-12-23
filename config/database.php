@@ -67,17 +67,27 @@ function get_prod_details(PDO $db, int $id_produit): array
         WHERE p.id_produit = :id_produit;"
     );
     $date_proches = $db->prepare(
-        "SELECT 
-                p2.*,
-                s.*,
-                ABS(DATEDIFF(p2.date_arrivee, p1.date_arrivee)) as jours_difference
-            FROM produit p1
-            JOIN salle s1 ON p1.id_salle = s1.id_salle
-            JOIN produit p2 ON p2.id_produit != p1.id_produit
-            JOIN salle s ON p2.id_salle = s.id_salle
-            WHERE p1.id_produit = :id_produit
-            AND s.ville = s1.ville
-            ORDER BY jours_difference
+        "SELECT
+                p_autres.id_produit,
+                p_autres.date_depart,
+                p_autres.date_arrivee,
+                p_autres.prix,
+                s_autres.photo,
+                s_autres.titre,
+                s_autres.ville,
+                s_autres.description,
+                s_autres.capacite
+            FROM 
+                produit p_reference
+            JOIN salle s_reference ON p_reference.id_salle = s_reference.id_salle
+            JOIN produit p_autres ON p_autres.id_produit <> p_reference.id_produit
+            JOIN salle s_autres ON p_autres.id_salle = s_autres.id_salle
+            WHERE 
+                p_reference.id_produit = :id_produit  -- ID du produit consulté
+                AND s_autres.ville = s_reference.ville
+                AND p_autres.etat = 0 -- Optionnel : seulement les produits disponibles
+            ORDER BY 
+                ABS(DATEDIFF(p_autres.date_arrivee, p_reference.date_arrivee)) ASC
             LIMIT 3;"
     );
 
