@@ -34,7 +34,7 @@
                     // SI L'UTILISATEUR EST CONNECTÉ (membre ou admin)
                     // if(isset($_SESSION['membre'])) {
                     ?>
-                    <!-- <a href="panier.php?id_produit=<?php echo $id_produit; ?>" class="btn-panier">Ajouter au panier</a> -->
+                    <!-- <a href="panier.php?id_produit=<?= $id_produit; ?>" class="btn-panier">Ajouter au panier</a> -->
                     <?php
                     // } else {
                     ?>
@@ -70,59 +70,7 @@
     <!-- Section Avis et Commentaires -->
     <section class="avis-section">
         <h3>💬 Avis et commentaires</h3>
-
-        <?php
-        /* 🔹 TRAITEMENT PHP À FAIRE
-           1. Récupérer tous les avis pour cette salle :
-
-           SELECT a.*, m.pseudo 
-           FROM avis a 
-           INNER JOIN membre m ON a.id_membre = m.id_membre 
-           WHERE a.id_salle = ? 
-           ORDER BY a.date DESC
-
-           2. Afficher chaque avis avec pseudo, date, note et commentaire
-        */
-        ?>
-
-        <!-- Liste des avis existants -->
-        <div class="avis-liste">
-            <!-- Exemple d'avis 1 -->
-            <article class="avis-item">
-                <div class="avis-header">
-                    <strong class="avis-auteur">Jean_Dupont</strong>
-                    <span class="avis-note"><?=$star_note?></span>
-                    <span class="avis-date">15/12/2025</span>
-                </div>
-                <p class="avis-commentaire">
-                    Excellente salle, très bien équipée et idéalement située.
-                    L'équipe est professionnelle et réactive. Je recommande vivement !
-                </p>
-            </article>
-
-            <!-- Exemple d'avis 2 -->
-            <article class="avis-item">
-                <div class="avis-header">
-                    <strong class="avis-auteur">Marie_Martin</strong>
-                    <span class="avis-note">⭐⭐⭐⭐ (4/5)</span>
-                    <span class="avis-date">10/12/2025</span>
-                </div>
-                <p class="avis-commentaire">
-                    Très bonne salle pour nos séminaires. Seul bémol : le parking un peu cher.
-                </p>
-            </article>
-
-            <!-- Exemple d'avis 3 -->
-            <article class="avis-item">
-                <div class="avis-header">
-                    <strong class="avis-auteur">Pierre_Leroy</strong>
-                    <span class="avis-note">⭐⭐⭐⭐⭐ (5/5)</span>
-                    <span class="avis-date">05/12/2025</span>
-                </div>
-                <p class="avis-commentaire">
-                    Parfait pour notre événement d'entreprise. Espace modulable et lumineux.
-                </p>
-            </article>
+        <?= get_rate() ?>
         </div>
 
         <!-- Formulaire d'ajout d'avis -->
@@ -154,7 +102,6 @@
                 <label for="commentaire">Votre commentaire :</label>
                 <textarea name="commentaire" id="commentaire" rows="5" required
                     placeholder="Partagez votre expérience..."></textarea>
-
                 <button type="submit" name="ajouter_avis">Publier mon avis</button>
             </form>
             <?php
@@ -181,8 +128,9 @@
         ?>
 
         <div class="offres-grid">
+            <?= get_similar_offers(); ?>
             <!-- Suggestion 1 -->
-            <article class="offre-card">
+            <!-- <article class="offre-card">
                 <img src="images/salles/salle-paris3.jpg" alt="Salle Van Gogh Paris">
                 <div class="offre-content">
                     <h4>Salle Van Gogh – Paris</h4>
@@ -195,10 +143,10 @@
                         <a href="reservation_details.php?id_produit=4">Voir détails</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Suggestion 2 -->
-            <article class="offre-card">
+            <!-- <article class="offre-card">
                 <img src="images/salles/salle-paris3.jpg" alt="Salle Monet Paris">
                 <div class="offre-content">
                     <h4>Salle Monet – Paris</h4>
@@ -211,10 +159,10 @@
                         <a href="reservation_details.php?id_produit=5">Voir détails</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Suggestion 3 -->
-            <article class="offre-card">
+            <!-- <article class="offre-card">
                 <img src="assets/images/salle2.jpg" alt="Salle Renoir Paris">
                 <div class="offre-content">
                     <h4>Salle Renoir – Paris</h4>
@@ -227,7 +175,7 @@
                         <a href="reservation_details.php?id_produit=6">Voir détails</a>
                     </div>
                 </div>
-            </article>
+            </article> -->
         </div>
     </section>
 </main>
