@@ -1,8 +1,10 @@
 <?php
-session_start();
+require "inc/haut.inc.php";
+require "inc/menu.inc.php";
 
+session_start();
 // Vérifier si l'utilisateur est connecté
-if (!isset($_SESSION['id_membre'])) {
+if (!isset($_SESSION["membre"]['id_membre'])) {
     // Rediriger vers la page de connexion
     echo '<script>
             alert("Vous devez vous connecter avant d\'accéder à votre panier.");
@@ -117,7 +119,7 @@ $total = $sousTotal + $tva;
         <a href='#'>Se déconnecter</a>
     </nav> -->
 
-<main class="panier-container">
+<main class="container panier-container">
     <h2>Mon Panier</h2>
 
     <?php if ($messageType === 'success'): ?>
@@ -142,7 +144,7 @@ $total = $sousTotal + $tva;
             <h3>Votre panier est vide</h3>
             <p>Découvrez nos offres et commencez à réserver vos salles !</p>
             <a href="reservation.php" class="btn-pay"
-                style="display: inline-block; margin-top: 20px; text-decoration: none;">
+                style="display: inline-block; margin-top: 20px; text-decoration: none; color:white;">
                 Voir les offres disponibles
             </a>
         </div>
@@ -264,3 +266,4 @@ $total = $sousTotal + $tva;
         }
     });
 </script>
+<?php require "inc/bas.inc.php" ?>

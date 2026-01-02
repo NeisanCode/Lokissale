@@ -1,18 +1,17 @@
 <?php
-require_once "../config/connexion.php";
-require_once "session.php";
+require_once "../config/connexion.php"; // Ta connexion BDD
+require_once "session.php";            // Doit contenir session_start()
+
 $message = '';
-$message_type = ''; // 'error' ou 'success'
+$message_type = '';
 $membre_connecte = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $email = $_POST['email'];
-    $mdp = $_POST['mdp'];
+    $mdp = $_POST['password'];
 
-    // Vérifier si l'utilisateur existe
+    // Ton traitement existant
     $membre = checkUser($email);
-
 
     if (!$membre) {
         $message = "Aucun compte trouvé pour cet email.";
@@ -25,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $membre_connecte = $membre;
         $message = "Connexion réussie. Bienvenue " . htmlspecialchars($membre['pseudo']) . " !";
         $message_type = 'success';
+
+        // Optionnel : redirection automatique après 2 secondes
+        header("Refresh: 1; url=profil.php");
     }
 }
-?>

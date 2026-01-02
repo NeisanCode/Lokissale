@@ -2,7 +2,7 @@
 <?php require "inc/menu.inc.php" ?>
 <?php require "../backend/salle.php" ?>
 
-
+<?php unset($_SESSION['membre']); // ?>
 <main class="container-large">
     <!-- Présentation -->
     <section class="bienvenue">

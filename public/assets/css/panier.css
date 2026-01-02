@@ -190,6 +190,8 @@
 .btn-pay {
     background: #1abc9c;
     color: white;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .btn-pay:hover {

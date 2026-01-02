@@ -7,7 +7,7 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté
-$isConnected = isset($_SESSION['id_membre']);
+$isConnected = isset($_SESSION['membre']["id_membre"]);
 $isSubscribed = false;
 $message = '';
 
