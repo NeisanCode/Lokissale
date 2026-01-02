@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$membre) {
         $message = "Aucun compte trouvé pour cet email.";
         $message_type = 'error';
-    } elseif ($mdp !== $membre['mdp']) {
+    } elseif (password_verify($mdp, $membre['mdp'])) {
         $message = "Mot de passe incorrect.";
         $message_type = 'error';
     } else {
