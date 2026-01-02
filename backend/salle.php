@@ -1,7 +1,8 @@
 <?php
-require_once "../config/database.php";
+require_once "../config/produit.php";
 require_once "../backend/utils.php";
-function create_offer_salle(
+// cette fonction permet de creer les salles
+function createOfferRoom(
     string $photo,
     string $info_title,
     string $infoville,
@@ -39,11 +40,10 @@ function create_offer_salle(
 }
 function get_salles(?int $limit = null): string
 {
-    global $db;
-    $products = get_latest_products_per_room($db, $limit);
+    $products = getLastProdsByRoom($limit);
     $html = "";
     foreach ($products as $product) {
-        $html .= create_offer_salle(
+        $html .= createOfferRoom(
             $product['photo'],
             $product['titre'],
             $product['ville'],

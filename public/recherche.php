@@ -1,74 +1,59 @@
-<?php require "inc/haut.inc.php" ?>
-<?php require "inc/menu.inc.php" ?>
+<?php
+require "inc/haut.inc.php";
+require "inc/menu.inc.php";
+require "../backend/recherche.php"; // Inclure la logique de traitement
+require_once "../backend/salle.php";
+?>
 
-<main class="container-large"> 
+<main class="container-large">
     <!-- Présentation -->
     <section class="bienvenue">
         <h2>Rechercher une salle disponible</h2>
         <p>Utilisez le formulaire ci-dessous pour rechercher une salle disponible selon vos dates de réservation.</p>
-    </section> 
+    </section>
 
     <!-- Formulaire de recherche -->
     <section class="recherche-form">
-        <form id="formRecherche" method="get" action="recherche.php">
-            <label for="date_arrivee">Date d’arrivée</label>
-            <input type="date" id="date_arrivee" name="date_arrivee" required>
+        <form method="GET" action="">
+            <label for="date_arrivee">Date d'arrivée</label>
+            <input type="date" id="date_arrivee" name="date_arrivee" required
+                value="<?= isset($_GET['date_arrivee']) ? htmlspecialchars($_GET['date_arrivee']) : '' ?>">
 
             <label for="date_depart">Date de départ</label>
-            <input type="date" id="date_depart" name="date_depart" required>
+            <input type="date" id="date_depart" name="date_depart" required
+                value="<?= isset($_GET['date_depart']) ? htmlspecialchars($_GET['date_depart']) : '' ?>">
 
             <button type="submit">Rechercher</button>
         </form>
-    </section> 
+    </section>
 
     <!-- Résultats de recherche -->
     <section class="offres" style="margin-top:40px;">
         <h3>Résultats de la recherche</h3>
-        <?php 
-        /* 🔹 TRAITEMENT PHP À FAIRE
-           Vérifier si les dates sont envoyées
-           Rechercher les produits disponibles :
-           date_arrivee >= date sélectionnée
-           date_depart <= date sélectionnée
-           etat = 0
-           jointure produits + salles
-        */
-        // SI AUCUN RÉSULTAT
-        // echo "<p>Aucune salle disponible pour ces dates.</p>"; 
-        ?>
+
+        <?php if ($message): ?>
+            <p style="<?= $message_type === 'error' ? 'color:red;' : '' ?>">
+                <?= htmlspecialchars($message) ?>
+            </p>
+        <?php endif; ?>
+
         <div class="offres-grid">
-            <!-- Exemple d'offre -->
-            <article class="offre-card"> 
-                <img src="images/salles/salle-paris.jpg" alt="Salle Cézanne Paris">
-                <div class="offre-content">
-                    <h4>Salle Cézanne – Paris</h4>
-                    <p>Salle moderne idéale pour réunions professionnelles.</p>
-                    <p><strong>Capacité :</strong> 20 personnes</p>
-                    <p><strong>Prix :</strong> 550 €</p>
-                    <div class="offre-actions"> 
-                        <a href="connexion.php">Se connecter</a> 
-                        <a href="reservation_details.php?id_produit=1">Voir détails</a> 
-                    </div>
-                </div>
-            </article>
+            <?php foreach ($salles as $salle): ?>
+                <?= createOfferRoom(
+                    $salle["photo"],
+                    $salle["titre"],
+                    $salle["ville"],
+                    $salle["description"],
+                    $salle["date_depart"],
+                    $salle["date_arrivee"],
+                    $salle["capacite"],
+                    $salle["prix"],
+                    $salle["id_produit"]
+                ) ?>
 
-            <article class="offre-card"> 
-                <img src="images/salles/salle-lyon.jpg" alt="Salle Mozart Lyon">
-                <div class="offre-content">
-                    <h4>Salle Mozart – Lyon</h4>
-                    <p>Salle spacieuse pour formations et séminaires.</p>
-                    <p><strong>Capacité :</strong> 30 personnes</p>
-                    <p><strong>Prix :</strong> 620 €</p>
-                    <div class="offre-actions"> 
-                        <a href="connexion.php">Se connecter</a> 
-                        <a href="reservation_details.php?id_produit=2">Voir détails</a> 
-                    </div>
-                </div>
-            </article>
-
-            <!-- Ajouter d'autres résultats ici -->
+            <?php endforeach; ?>
         </div>
     </section>
 </main>
 
-<?php require "inc/bas.inc.php" ?>
+<?php require "inc/bas.inc.php"; ?>

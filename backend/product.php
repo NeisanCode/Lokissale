@@ -1,5 +1,5 @@
 <?php
-require_once "../config/database.php";
+require_once "../config/produit.php";
 require_once "../backend/salle.php";
 require_once "../backend/utils.php";
 
@@ -15,7 +15,7 @@ if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
     "produit" => $product,
     "avis" => $avis,
     "similar" => $offers
-] = get_prod_details($db, $id_product);
+] = get_prod_details($id_product);
 
 // ---salle details variables
 $title = $product['titre'];
@@ -82,7 +82,7 @@ function get_similar_offers(): string
     global $offers;
     $html = "";
     foreach ($offers as $offer) {
-        $html .= create_offer_salle(
+        $html .= createOfferRoom(
             $offer['photo'],
             $offer['titre'],
             $offer['ville'],
