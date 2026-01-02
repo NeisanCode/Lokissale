@@ -2,7 +2,7 @@
 require "inc/haut.inc.php";
 require "inc/menu.inc.php";
 require "../backend/recherche.php"; // Inclure la logique de traitement
-require_once "../backend/salle.php";
+require "../backend/salle.php";
 ?>
 
 <main class="container-large">
@@ -44,13 +44,12 @@ require_once "../backend/salle.php";
                     $salle["titre"],
                     $salle["ville"],
                     $salle["description"],
-                    $salle["date_depart"],
-                    $salle["date_arrivee"],
+                    $date_depart,
+                    $date_arrivee,
                     $salle["capacite"],
                     $salle["prix"],
                     $salle["id_produit"]
                 ) ?>
-
             <?php endforeach; ?>
         </div>
     </section>
