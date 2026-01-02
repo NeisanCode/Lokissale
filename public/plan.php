@@ -1,182 +1,103 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="shortcut icon" href="assets/images/logo.ico">
-    <title>LOKISALLE - Plan du Site</title>
-    <style>
-        .plan-section {
-            margin: 25px 0;
-        }
-
-        .plan-section h3 {
-            color: #2c3e50;
-            border-bottom: 2px solid #1abc9c;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-
-        .plan-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .plan-section ul li {
-            margin: 8px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .plan-section ul li:before {
-            content: "►";
-            position: absolute;
-            left: 0;
-            color: #1abc9c;
-        }
-
-        .plan-section a {
-            color: #2c3e50;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .plan-section a:hover {
-            color: #1abc9c;
-            text-decoration: underline;
-        }
-
-        .subsection {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .subsection li:before {
-            content: "▪";
-        }
-    </style>
-</head>
-
-<body>
-    <header class="header">
-        <div class="logo"></div>
-        <h1>LOKISALLE</h1>
-        <div class="typewriter">
-            <span class="text">Lokisalle — L'espace parfait, au bon moment.</span>
-        </div>
-    </header>
-
+<?php require "inc/haut.inc.php" ?>
+<?php require "inc/menu.inc.php" ?>
+<!-- 
     <nav class="menu">
         <a href='index.php'>Accueil</a>
         <a href='reservation.php'>Réservation</a>
         <a href='recherche.php'>Recherche</a>
         <a href='connexion.php'>Connexion</a>
         <a href='inscription.php'>Inscription</a>
-    </nav>
+    </nav> -->
 
-    <main class="container">
-        <h2>Plan du Site</h2>
-        <p style="margin-bottom: 30px; color: #555;">
-            Retrouvez ci-dessous l'organisation complète du site LOKISALLE pour faciliter votre navigation.
-        </p>
+<main class="container">
+    <h2>Plan du Site</h2>
+    <p style="margin-bottom: 30px; color: #555;">
+        Retrouvez ci-dessous l'organisation complète du site LOKISALLE pour faciliter votre navigation.
+    </p>
 
-        <!-- Pages Principales -->
-        <div class="plan-section">
-            <h3>Pages Principales</h3>
-            <ul>
-                <li><a href="index.php">Accueil</a> - Présentation de LOKISALLE et dernières offres</li>
-                <li><a href="reservation.php">Réservation</a> - Catalogue complet de nos offres disponibles</li>
-                <li><a href="recherche.php">Recherche</a> - Rechercher une salle par date</li>
-                <li><a href="reservation_details.php">Détails d'une réservation</a> - Fiche détaillée d'une salle</li>
-            </ul>
-        </div>
+    <!-- Pages Principales -->
+    <div class="plan-section">
+        <h3>Pages Principales</h3>
+        <ul>
+            <li><a href="index.php">Accueil</a> - Présentation de LOKISALLE et dernières offres</li>
+            <li><a href="reservation.php">Réservation</a> - Catalogue complet de nos offres disponibles</li>
+            <li><a href="recherche.php">Recherche</a> - Rechercher une salle par date</li>
+            <li><a href="reservation_details.php">Détails d'une réservation</a> - Fiche détaillée d'une salle</li>
+        </ul>
+    </div>
 
-        <!-- Espace Visiteur -->
-        <div class="plan-section">
-            <h3>Espace Visiteur</h3>
-            <ul>
-                <li><a href="connexion.php">Connexion</a> - Se connecter à son compte membre</li>
-                <li><a href="inscription.php">Inscription</a> - Créer un nouveau compte</li>
-                <li><a href="motdepasseperdu.php">Mot de passe oublié</a> - Récupération de mot de passe</li>
-                <li><a href="contact.php">Contact</a> - Formulaire de contact</li>
-            </ul>
-        </div>
+    <!-- Espace Visiteur -->
+    <div class="plan-section">
+        <h3>Espace Visiteur</h3>
+        <ul>
+            <li><a href="connexion.php">Connexion</a> - Se connecter à son compte membre</li>
+            <li><a href="inscription.php">Inscription</a> - Créer un nouveau compte</li>
+            <li><a href="motdepasseperdu.php">Mot de passe oublié</a> - Récupération de mot de passe</li>
+            <li><a href="contact.php">Contact</a> - Formulaire de contact</li>
+        </ul>
+    </div>
 
-        <!-- Espace Membre -->
-        <div class="plan-section">
-            <h3>Espace Membre</h3>
-            <ul>
-                <li><a href="profil.php">Mon Profil</a> - Gestion des informations personnelles et historique</li>
-                <li><a href="panier.php">Mon Panier</a> - Panier de réservations</li>
-                <li><a href="newsletter.php">Newsletter</a> - Inscription à la newsletter</li>
-                <li>Déconnexion - Se déconnecter de son compte</li>
-            </ul>
-        </div>
+    <!-- Espace Membre -->
+    <div class="plan-section">
+        <h3>Espace Membre</h3>
+        <ul>
+            <li><a href="profil.php">Mon Profil</a> - Gestion des informations personnelles et historique</li>
+            <li><a href="panier.php">Mon Panier</a> - Panier de réservations</li>
+            <li><a href="newsletter.php">Newsletter</a> - Inscription à la newsletter</li>
+            <li>Déconnexion - Se déconnecter de son compte</li>
+        </ul>
+    </div>
 
-        <!-- Espace Administrateur -->
-        <div class="plan-section">
-            <h3>Espace Administrateur (Back-Office)</h3>
-            <ul>
-                <li><a href="gestion_salles.php">Gestion des Salles</a> - Ajouter, modifier, supprimer des salles</li>
-                <li><a href="gestion_produits.php">Gestion des Produits</a> - Ajouter, modifier, supprimer des offres</li>
-                <li><a href="gestion_membres.php">Gestion des Membres</a> - Administration des comptes utilisateurs</li>
-                <li><a href="gestion_commandes.php">Gestion des Commandes</a> - Consultation des réservations</li>
-                <li><a href="gestion_avis.php">Gestion des Avis</a> - Modération des commentaires</li>
-                <li><a href="gestion_promos.php">Gestion des Promotions</a> - Codes promotionnels</li>
-                <li><a href="statistiques.php">Statistiques</a> - Rapports et analyses</li>
-                <li><a href="envoi_newsletter.php">Envoi Newsletter</a> - Diffusion d'informations aux abonnés</li>
-            </ul>
-        </div>
+    <!-- Espace Administrateur -->
+    <div class="plan-section">
+        <h3>Espace Administrateur (Back-Office)</h3>
+        <ul>
+            <li><a href="gestion_salles.php">Gestion des Salles</a> - Ajouter, modifier, supprimer des salles</li>
+            <li><a href="gestion_produits.php">Gestion des Produits</a> - Ajouter, modifier, supprimer des offres</li>
+            <li><a href="gestion_membres.php">Gestion des Membres</a> - Administration des comptes utilisateurs</li>
+            <li><a href="gestion_commandes.php">Gestion des Commandes</a> - Consultation des réservations</li>
+            <li><a href="gestion_avis.php">Gestion des Avis</a> - Modération des commentaires</li>
+            <li><a href="gestion_promos.php">Gestion des Promotions</a> - Codes promotionnels</li>
+            <li><a href="statistiques.php">Statistiques</a> - Rapports et analyses</li>
+            <li><a href="envoi_newsletter.php">Envoi Newsletter</a> - Diffusion d'informations aux abonnés</li>
+        </ul>
+    </div>
 
-        <!-- Pages Légales et Informations -->
-        <div class="plan-section">
-            <h3>Pages Légales et Informations</h3>
-            <ul>
-                <li><a href="mentions.php">Mentions Légales</a> - Informations légales du site</li>
-                <li><a href="cgv.php">Conditions Générales de Vente</a> - CGV applicables</li>
-                <li><a href="plan.php">Plan du Site</a> - Architecture du site (page actuelle)</li>
-            </ul>
-        </div>
+    <!-- Pages Légales et Informations -->
+    <div class="plan-section">
+        <h3>Pages Légales et Informations</h3>
+        <ul>
+            <li><a href="mentions.php">Mentions Légales</a> - Informations légales du site</li>
+            <li><a href="cgv.php">Conditions Générales de Vente</a> - CGV applicables</li>
+            <li><a href="plan.php">Plan du Site</a> - Architecture du site (page actuelle)</li>
+        </ul>
+    </div>
 
-        <!-- Fonctionnalités -->
-        <div class="plan-section">
-            <h3>Fonctionnalités Transversales</h3>
-            <ul>
-                <li>Impression de page - Disponible sur toutes les pages</li>
-                <li>Menu dynamique - Adapté selon le statut (visiteur, membre, administrateur)</li>
-                <li>Système de notation et avis - Sur les fiches détaillées des salles</li>
-                <li>Codes promotionnels - Applicables lors du paiement</li>
-                <li>Génération de factures PDF - Après validation de commande</li>
-            </ul>
-        </div>
+    <!-- Fonctionnalités -->
+    <div class="plan-section">
+        <h3>Fonctionnalités Transversales</h3>
+        <ul>
+            <li>Impression de page - Disponible sur toutes les pages</li>
+            <li>Menu dynamique - Adapté selon le statut (visiteur, membre, administrateur)</li>
+            <li>Système de notation et avis - Sur les fiches détaillées des salles</li>
+            <li>Codes promotionnels - Applicables lors du paiement</li>
+            <li>Génération de factures PDF - Après validation de commande</li>
+        </ul>
+    </div>
 
-        <!-- Zones Géographiques -->
-        <div class="plan-section">
-            <h3>Nos Zones Géographiques</h3>
-            <ul>
-                <li>Paris - Plusieurs salles disponibles</li>
-                <li>Lyon - Plusieurs salles disponibles</li>
-                <li>Marseille - Plusieurs salles disponibles</li>
-            </ul>
-        </div>
+    <!-- Zones Géographiques -->
+    <div class="plan-section">
+        <h3>Nos Zones Géographiques</h3>
+        <ul>
+            <li>Paris - Plusieurs salles disponibles</li>
+            <li>Lyon - Plusieurs salles disponibles</li>
+            <li>Marseille - Plusieurs salles disponibles</li>
+        </ul>
+    </div>
 
-        <p style="margin-top: 30px; padding: 15px; background: #ecf0f1; border-radius: 5px; text-align: center;">
-            <strong>Note :</strong> Certaines pages nécessitent une connexion pour y accéder.<br>
-            Les pages d'administration sont réservées aux administrateurs du site.
-        </p>
-    </main>
-
-    <footer class="footer">
-        <p>© LOKISALLE | </p>
-        <nav>
-            <a href="mentions.php">Mentions légales</a> |
-            <a href="cgv.php">CGV</a> |
-            <a href="plan.php" style="font-weight: bold;">Plan du site</a> |
-            <a href="#" onclick="window.print()">Imprimer</a>
-        </nav>
-    </footer>
-</body>
-
-</html>
+    <p style="margin-top: 30px; padding: 15px; background: #ecf0f1; border-radius: 5px; text-align: center;">
+        <strong>Note :</strong> Certaines pages nécessitent une connexion pour y accéder.<br>
+        Les pages d'administration sont réservées aux administrateurs du site.
+    </p>
+</main>
+<?php require "inc/bas.inc.php" ?>

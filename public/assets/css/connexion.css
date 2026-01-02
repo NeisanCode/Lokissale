@@ -94,7 +94,8 @@
 
 /* Lien dans le formulaire ou sections */
 .container a {
-    color: #1abc9c;
+    /* color: #1abc9c; */
+    color: white;
     text-decoration: none;
 }
 

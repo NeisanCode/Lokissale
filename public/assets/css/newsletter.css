@@ -1,76 +1,75 @@
 .newsletter-container {
-            text-align: center;
-        }
+    text-align: center;
+}
 
-        .newsletter-box {
-            background: #ecf0f1;
-            padding: 30px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #1abc9c;
-        }
+.newsletter-box {
+    background: #ecf0f1;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #1abc9c;
+}
 
-        .newsletter-icon {
-            font-size: 60px;
-            color: #1abc9c;
-            margin-bottom: 15px;
-        }
+.newsletter-icon {
+    font-size: 60px;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
 
-        .newsletter-benefits {
-            text-align: left;
-            margin: 25px auto;
-            max-width: 500px;
-        }
+.newsletter-benefits {
+    text-align: left;
+    margin: 25px auto;
+    max-width: 500px;
+}
 
-        .newsletter-benefits ul {
-            list-style: none;
-            padding: 0;
-        }
+.newsletter-benefits ul {
+    list-style: none;
+    padding: 0;
+}
 
-        .newsletter-benefits li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
+.newsletter-benefits li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
 
-        .newsletter-benefits li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #1abc9c;
-            font-weight: bold;
-            font-size: 20px;
-        }
+.newsletter-benefits li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1abc9c;
+    font-weight: bold;
+    font-size: 20px;
+}
 
-        .btn-subscribe {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #1abc9c;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background 0.3s;
-        }
+.btn-subscribe {
+    display: inline-block;
+    padding: 15px 40px;
+    background: hsl(168, 76%, 42%);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
 
-        .btn-subscribe:hover {
-            background: #16a085;
-        }
+.btn-subscribe:hover {
+    background: #16a085;
+}
 
-        .warning-box {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
+.warning-box {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
 
-        .success-box {
-            background: #d4edda;
-            border: 1px solid #28a745;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
+.success-box {
+    background: #d4edda;
+    border: 1px solid #28a745;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}

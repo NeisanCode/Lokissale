@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="assets/css/welcome.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
     <link rel="stylesheet" href="assets/css/newsletter.css">
+
+    <link rel="stylesheet" href="assets/css/gestionsalle.css">
+    <link rel="stylesheet" href="assets/css/motdepasseperdu.css">
+    <link rel="stylesheet" href="assets/css/plansite.css">
+    <link rel="stylesheet" href="assets/css/panier.css">
+
+
     <link rel="stylesheet" href="assets/css/recherche.css">
     <link rel="stylesheet" href="assets/css/reservations_details.css">
     <link rel="shortcut icon" href="assets/images/logo.ico">
