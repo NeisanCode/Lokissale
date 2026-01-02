@@ -31,9 +31,10 @@ require "../backend/inscription.php"; // Inclure la logique de traitement
 
             <label for="sexe">Sexe</label>
             <select id="sexe" name="sexe" required>
-                <option value="m" <?= (isset($_POST['sexe']) && $_POST['sexe'] === 'm') ? 'selected' : 'selected' ?>>Homme
+                <option value="Masculin" selected >Homme</option>
+                <option value="Feminin" <?= (isset($_POST['sexe']) && $_POST['sexe'] === 'Feminin') ? 'selected' : '' ?>>
+                    Femme
                 </option>
-                <option value="f" <?= (isset($_POST['sexe']) && $_POST['sexe'] === 'f') ? 'selected' : '' ?>>Femme</option>
             </select>
 
             <label for="ville">Ville</label>

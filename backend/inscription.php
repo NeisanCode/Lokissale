@@ -28,13 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Inscription : ajouter dans la BD
         $mdp_hash = password_hash($mdp, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO membre (pseudo, nom, prenoms, email, mdp, sexe, ville, statut)
-                VALUES (:pseudo, :nom, :prenoms, :email, :mdp, :sexe, :ville, 1)";
+        $sql = "INSERT INTO membre (pseudo, nom, prenom, email, mdp, sexe, ville, statut)
+                        VALUES(:pseudo, :nom, :prenom, :email, :mdp, :sexe, :ville, 0)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'pseudo' => $pseudo,
             'nom' => $nom,
-            'prenoms' => $prenoms,
+            'prenom' => $prenoms,
             'email' => $email,
             'mdp' => $mdp_hash,
             'sexe' => $sexe,

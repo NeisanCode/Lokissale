@@ -1,3 +1,4 @@
+-- Active: 1767119995929@@localhost@3306@lokissale
 /*M!999999\- enable the sandbox mode */ 
 -- MariaDB dump 10.19  Distrib 10.11.13-MariaDB, for debian-linux-gnu (x86_64)
 --
