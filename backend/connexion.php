@@ -1,5 +1,7 @@
 <?php
 require_once "../config/connexion.php";
+require_once "session.php";
+
 
 $message = '';
 $message_type = ''; // 'error' ou 'success'
@@ -8,7 +10,7 @@ $membre_connecte = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = $_POST['email'];
-    $mdp = $_POST['motdepasse'];
+    $mdp = $_POST['mdp'];
 
     // Vérifier si l'utilisateur existe
     $membre = checkUser($email);
@@ -22,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message_type = 'error';
     } else {
         $_SESSION['membre'] = $membre;
+        print_r($_SESSION);
         $membre_connecte = $membre;
         $message = "Connexion réussie. Bienvenue " . htmlspecialchars($membre['pseudo']) . " !";
         $message_type = 'success';

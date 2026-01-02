@@ -1,5 +1,7 @@
 <?php
 require "../config/database.php"; // Connexion à la base de données
+require_once "session.php";
+
 
 $message = '';
 $message_type = ''; // 'error' ou 'success'

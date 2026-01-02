@@ -57,7 +57,7 @@ if ($isConnected) {
         </div>
         <p>La newsletter est un service exclusif réservé à nos membres.</p>
         <p>
-            <a href="inscription.php" class="btn-subscribe">Créer un compte</a>
+            <a href="inscription.php" class="btn-subscribe" style="color:white; text-decoration:none">Créer un compte</a>
             ou
             <a href="connexion.php" style="color: #1abc9c; font-weight: bold;">Se connecter</a>
         </p>

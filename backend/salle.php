@@ -1,6 +1,6 @@
 <?php
 require_once "../config/produit.php";
-require_once "../backend/utils.php";
+require_once "utils.php";
 // cette fonction permet de creer les salles
 function createOfferRoom(
     string $photo,

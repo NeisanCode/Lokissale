@@ -16,8 +16,8 @@ require "../backend/connexion.php"; // Inclure la logique de traitement
             <input type="email" id="email" name="email" required placeholder="Votre email"
                 value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>">
 
-            <label for="motdepasse">Mot de passe</label>
-            <input type="password" id="motdepasse" name="motdepasse" required minlength="6"
+            <label for="mdp">Mot de passe</label>
+            <input type="password" id="mdp" name="mdp" required minlength="6"
                 placeholder="Votre mot de passe">
 
             <button type="submit">Se connecter</button>

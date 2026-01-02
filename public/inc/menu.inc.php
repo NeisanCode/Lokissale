@@ -7,3 +7,6 @@
     <?= nav_menu("Connexion", "connexion.php"); ?>
     <?= nav_menu("Inscription", "inscription.php"); ?>
 </nav>
+
+
+<?php print_r($_SESSION); ?>

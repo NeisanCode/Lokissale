@@ -1,7 +1,7 @@
 <?php
 require_once "../config/produit.php";
-require_once "../backend/salle.php";
-require_once "../backend/utils.php";
+require_once "salle.php";
+require_once "utils.php";
 
 
 
