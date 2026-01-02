@@ -7,6 +7,13 @@ require_once "../backend/session.php"; ?>
     <?= nav_menu("Acceuil", "index.php"); ?>
     <?= nav_menu("Reservation", "reservation.php"); ?>
     <?= nav_menu("Recherche", "recherche.php"); ?>
-    <?= nav_menu("Connexion", "connexion.php"); ?>
-    <?= nav_menu("Inscription", "inscription.php"); ?>
+
+
+    <?php if (isset($_SESSION["membre"]) && ($_SESSION["membre"]["id_membre"])): ?>
+        <?= nav_menu("Votre profil", "profil.php"); ?>
+        <?= nav_menu("Votre panier", "panier.php"); ?>
+    <?php else: ?>
+        <?= nav_menu("Connexion", "connexion.php"); ?>
+        <?= nav_menu("Inscription", "inscription.php"); ?>
+    <?php endif; ?>
 </nav>

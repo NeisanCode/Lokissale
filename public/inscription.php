@@ -1,5 +1,4 @@
 <?php
-
 require "inc/haut.inc.php";
 require "inc/menu.inc.php";
 require "../backend/inscription.php"; // Inclure la logique de traitement
