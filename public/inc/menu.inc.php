@@ -1,4 +1,7 @@
-<?php require "inc/menu_func.php" ?>
+<?php
+require "inc/menu_func.php";
+require_once "../backend/session.php"; ?>
+
 
 <nav class="menu">
     <?= nav_menu("Acceuil", "index.php"); ?>
@@ -7,6 +10,3 @@
     <?= nav_menu("Connexion", "connexion.php"); ?>
     <?= nav_menu("Inscription", "inscription.php"); ?>
 </nav>
-
-
-<?php print_r($_SESSION); ?>

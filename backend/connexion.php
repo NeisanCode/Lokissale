@@ -1,8 +1,6 @@
 <?php
 require_once "../config/connexion.php";
 require_once "session.php";
-
-
 $message = '';
 $message_type = ''; // 'error' ou 'success'
 $membre_connecte = null;
@@ -19,12 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$membre) {
         $message = "Aucun compte trouvé pour cet email.";
         $message_type = 'error';
-    } elseif (password_verify($mdp, $membre['mdp'])) {
+    } elseif (!password_verify($mdp, $membre['mdp'])) {
         $message = "Mot de passe incorrect.";
         $message_type = 'error';
     } else {
         $_SESSION['membre'] = $membre;
-        print_r($_SESSION);
         $membre_connecte = $membre;
         $message = "Connexion réussie. Bienvenue " . htmlspecialchars($membre['pseudo']) . " !";
         $message_type = 'success';

@@ -1,4 +1,5 @@
 <?php
+
 function nav_menu(string $title, string $filename): string
 {
     $classname = "";
