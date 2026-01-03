@@ -1,7 +1,7 @@
 <?php
-session_start();
+require 'session.php';
 
-if (!isset($_SESSION['id_membre']) || $_SESSION['statut'] != 1) {
+if (!isset($_SESSION['membre']['id_membre']) || $_SESSION['statut'] != 1) {
     echo '<script>
         alert("Accès refusé. Page réservée aux administrateurs.");
         window.location.href = "../index.php";
