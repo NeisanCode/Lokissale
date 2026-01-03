@@ -1,5 +1,9 @@
-<?php require_once '../backend/gestionsalle.php'; ?>
-<main class="admin-container">
+<?php
+require "inc/haut.inc.php";
+require "inc/menu.inc.php";
+require_once '../backend/gestionsalle.php' ?>
+
+<main class="container admin-container">
     <h2>🏢 Gestion des salles</h2>
 
     <?php if ($message): ?>
@@ -8,8 +12,10 @@
         </div>
     <?php endif; ?>
 
-    <button onclick="toggleForm('add')">➕ Ajouter</button>
-    <button onclick="toggleForm('list')">📋 Liste</button>
+    <div class="buttons">
+        <button onclick="toggleForm('add')">➕ Ajouter</button>
+        <button onclick="toggleForm('list')">📋 Liste</button>
+    </div>
 
     <!-- FORMULAIRE -->
     <div id="formAdd">
@@ -56,3 +62,4 @@
         document.getElementById('tableList').style.display = type === 'list' ? 'block' : 'none';
     }
 </script>
+<?php require "inc/bas.inc.php" ?>

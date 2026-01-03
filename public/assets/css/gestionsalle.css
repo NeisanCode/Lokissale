@@ -1,5 +1,5 @@
 .admin-container {
-    max-width: 1200px;
+    width: 100%;
     margin: 30px auto;
 }
 
@@ -16,7 +16,10 @@
     gap: 15px;
     margin-bottom: 30px;
 }
-
+.buttons{
+    display: flex;
+    gap: 20px;
+}
 .btn-admin {
     flex: 1;
     padding: 15px;
@@ -157,7 +160,7 @@ td {
 }
 
 tbody tr:hover {
-    background: #f8f9fa;
+    background: #1abc9c57;
 }
 
 .btn-action {
