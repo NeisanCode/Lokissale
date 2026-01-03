@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/motdepasseperdu.css">
     <link rel="stylesheet" href="assets/css/plansite.css">
     <link rel="stylesheet" href="assets/css/panier.css">
+    <link rel="stylesheet" href="assets/css/profil.css">
 
 
     <link rel="stylesheet" href="assets/css/recherche.css">

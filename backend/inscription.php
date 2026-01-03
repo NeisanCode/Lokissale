@@ -1,5 +1,5 @@
 <?php
-require "../config/database.php"; // Connexion à la base de données
+require_once "../config/database.php"; // Connexion à la base de données
 require_once "session.php";
 
 
