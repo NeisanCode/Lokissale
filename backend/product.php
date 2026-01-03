@@ -3,8 +3,6 @@ require_once "../config/produit.php";
 require_once "salle.php";
 require_once "utils.php";
 
-
-
 if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
     $id_product = (int) $_GET['id_produit'];
 } else {

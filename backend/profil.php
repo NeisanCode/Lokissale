@@ -1,6 +1,6 @@
 <?php
-session_start();
-
+require_once "../config/database.php";
+require_once "session.php";
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['membre']['id_membre'])) {
     echo '<script>
@@ -14,25 +14,23 @@ $message = '';
 $messageType = '';
 
 // Récupérer les informations du membre depuis la session ou la base de données
-// require_once 'config/database.php';
-// $stmt = $pdo->prepare("SELECT * FROM membres WHERE id_membre = ?");
-// $stmt->execute([$_SESSION['id_membre']]);
-// $membre = $stmt->fetch();
+$stmt = $pdo->prepare("SELECT * FROM membre WHERE id_membre = ?");
+$stmt->execute([$_SESSION["membre"]['id_membre']]);
+$membre = $stmt->fetch();
 
 // Données de démonstration
-$membre = [
-    'id_membre' => $_SESSION['id_membre'] ?? 1,
-    'pseudo' => $_SESSION['pseudo'] ?? 'john_doe',
-    'nom' => $_SESSION['nom'] ?? 'Doe',
-    'prenom' => $_SESSION['prenom'] ?? 'John',
-    'email' => $_SESSION['email'] ?? 'john.doe@example.com',
-    'sexe' => $_SESSION['sexe'] ?? 'm',
-    'ville' => $_SESSION['ville'] ?? 'Paris',
-    'cp' => $_SESSION['cp'] ?? '75001',
-    'adresse' => $_SESSION['adresse'] ?? '123 Rue de la Paix',
-    'statut' => $_SESSION['statut'] ?? 0
-];
-
+// $membre = [
+//     'id_membre' => $_SESSION["membre"]['id_membre'],
+//     'pseudo' => $_SESSION["membre"]['pseudo'],
+//     'nom' => $_SESSION["membre"]['nom'],
+//     'prenom' => $_SESSION["membre"]['prenom'],
+//     'email' => $_SESSION["membre"]['email'],
+//     'sexe' => $_SESSION["membre"]['sexe'],
+//     'ville' => $_SESSION["membre"]['ville'],
+//     'cp' => $_SESSION["membre"]['cp'],
+//     'adresse' => $_SESSION["membre"]['adresse'],
+//     'statut' => $_SESSION["membre"]['statut'],
+// ];
 // Traitement de la mise à jour du profil
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update') {
     $pseudo = trim($_POST['pseudo']);
@@ -64,32 +62,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $messageType = 'error';
     } else {
         // Mise à jour dans la base de données
-        // $sql = "UPDATE membres SET pseudo = ?, nom = ?, prenom = ?, email = ?, sexe = ?, ville = ?, cp = ?, adresse = ?";
-        // $params = [$pseudo, $nom, $prenom, $email, $sexe, $ville, $cp, $adresse];
+        $sql = "UPDATE membre SET pseudo = ?, nom = ?, prenom = ?, email = ?, sexe = ?, ville = ?, cp = ?, adresse = ?";
+        $params = [$pseudo, $nom, $prenom, $email, $sexe, $ville, $cp, $adresse];
 
         // Si nouveau mot de passe
-        // if (!empty($nouveauMdp)) {
-        //     $sql .= ", mdp = ?";
-        //     $params[] = password_hash($nouveauMdp, PASSWORD_DEFAULT);
-        // }
+        if (!empty($nouveauMdp)) {
+            $sql .= ", mdp = ?";
+            $params[] = password_hash($nouveauMdp, PASSWORD_DEFAULT);
+        }
 
-        // $sql .= " WHERE id_membre = ?";
-        // $params[] = $_SESSION['id_membre'];
+        $sql .= " WHERE id_membre = ?";
+        $params[] = $_SESSION["membre"]['id_membre'];
 
-        // $stmt = $pdo->prepare($sql);
-        // if ($stmt->execute($params)) {
-        //     // Mettre à jour la session
-        //     $_SESSION['pseudo'] = $pseudo;
-        //     $_SESSION['nom'] = $nom;
-        //     $_SESSION['prenom'] = $prenom;
-        //     $_SESSION['email'] = $email;
-        //     
-        //     $message = "Vos informations ont été mises à jour avec succès !";
-        //     $messageType = 'success';
-        // } else {
-        //     $message = "Erreur lors de la mise à jour.";
-        //     $messageType = 'error';
-        // }
+        $stmt = $pdo->prepare($sql);
+        if ($stmt->execute($params)) {
+            // Mettre à jour la session
+            $_SESSION["membre"]['pseudo'] = $pseudo;
+            $_SESSION["membre"]['nom'] = $nom;
+            $_SESSION["membre"]['prenom'] = $prenom;
+            $_SESSION["membre"]['email'] = $email;
+
+            $message = "Vos informations ont été mises à jour avec succès !";
+            $messageType = 'success';
+        } else {
+            $message = "Erreur lors de la mise à jour.";
+            $messageType = 'error';
+        }
 
         // Pour la démo
         $message = "Vos informations ont été mises à jour avec succès !";
@@ -108,32 +106,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 }
 
 // Récupérer les commandes du membre
-// $stmtCommandes = $pdo->prepare("
-//     SELECT c.*, COUNT(dc.id_produit) as nb_produits 
-//     FROM commandes c
-//     LEFT JOIN details_commande dc ON c.id_commande = dc.id_commande
-//     WHERE c.id_membre = ?
-//     GROUP BY c.id_commande
-//     ORDER BY c.date DESC
-// ");
-// $stmtCommandes->execute([$_SESSION['id_membre']]);
-// $commandes = $stmtCommandes->fetchAll();
+$stmtCommandes = $pdo->prepare("-- sql
+    SELECT c.*, COUNT(dc.id_produit) as nb_produits 
+    FROM commande c
+    LEFT JOIN details_commande dc ON c.id_commande = dc.id_commande
+    WHERE c.id_membre = ?
+    GROUP BY c.id_commande
+    ORDER BY c.date DESC
+");
+$stmtCommandes->execute([$membre['id_membre']]);
+$commandes = $stmtCommandes->fetchAll();
 
 // Données de démonstration pour les commandes
-$commandes = [
-    [
-        'id_commande' => 1001,
-        'date' => '2025-12-15 14:30:00',
-        'montant' => 744,
-        'nb_produits' => 1
-    ],
-    [
-        'id_commande' => 1002,
-        'date' => '2025-11-20 10:15:00',
-        'montant' => 1020,
-        'nb_produits' => 1
-    ]
-];
+// $commandes = [
+//     [
+//         'id_commande' => 1001,
+//         'date' => '2025-12-15 14:30:00',
+//         'montant' => 744,
+//         'nb_produits' => 1
+//     ],
+//     [
+//         'id_commande' => 1002,
+//         'date' => '2025-11-20 10:15:00',
+//         'montant' => 1020,
+//         'nb_produits' => 1
+//     ]
+// ];
 
 // Calculer les statistiques
 $totalCommandes = count($commandes);

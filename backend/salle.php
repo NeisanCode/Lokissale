@@ -32,7 +32,7 @@ function createOfferRoom(
 
                 <div class="offre-actions">
                     <a href="reservation_details.php?id_produit={$info_id}">Voir détails</a>
-                    <a href="panier.php">Ajouter au panier</a>
+                    <a href="panier.php?action=add&id_produit={$info_id}">Ajouter au panier</a>
                 </div>
             </div>
         </article>

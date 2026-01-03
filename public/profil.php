@@ -7,7 +7,7 @@ require "../backend/profil.php"
     <!-- En-tête du profil -->
     <div class="profil-header">
         <div class="profil-avatar">
-            <?php echo $membre['sexe'] === 'f' ? '👩' : '👨'; ?>
+            <?php echo $membre['sexe'] === 'Feminin' ? '👩' : '👨'; ?>
         </div>
         <div class="profil-info">
             <h2>Bienvenue, <?php echo htmlspecialchars($membre['prenom'] . ' ' . $membre['nom']); ?> !</h2>
@@ -70,7 +70,7 @@ require "../backend/profil.php"
                 </div>
                 <div class="info-item">
                     <div class="info-label">Sexe</div>
-                    <div class="info-value"><?php echo $membre['sexe'] === 'f' ? 'Féminin' : 'Masculin'; ?></div>
+                    <div class="info-value"><?php echo $membre['sexe'] === 'Feminin' ? 'Féminin' : 'Masculin'; ?></div>
                 </div>
                 <div class="info-item">
                     <div class="info-label">Ville</div>
@@ -122,8 +122,10 @@ require "../backend/profil.php"
                     <div class="form-group">
                         <label for="sexe">Sexe <span class="required">*</span></label>
                         <select id="sexe" name="sexe" required>
-                            <option value="m" <?php echo $membre['sexe'] === 'm' ? 'selected' : ''; ?>>Masculin</option>
-                            <option value="f" <?php echo $membre['sexe'] === 'f' ? 'selected' : ''; ?>>Féminin</option>
+                            <option value="m" <?php echo $membre['sexe'] === 'Masculin' ? 'selected' : ''; ?>>Masculin
+                            </option>
+                            <option value="f" <?php echo $membre['sexe'] === 'Feminin' ? 'selected' : ''; ?>>Féminin
+                            </option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -248,4 +250,4 @@ require "../backend/profil.php"
     });
 </script>
 
-<?php require "inc/menu.inc.php"; ?>
+<?php require "inc/bas.inc.php"; ?>

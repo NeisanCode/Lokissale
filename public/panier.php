@@ -1,125 +1,9 @@
 <?php
 require "inc/haut.inc.php";
 require "inc/menu.inc.php";
-
-session_start();
-// Vérifier si l'utilisateur est connecté
-if (!isset($_SESSION["membre"]['id_membre'])) {
-    // Rediriger vers la page de connexion
-    echo '<script>
-            alert("Vous devez vous connecter avant d\'accéder à votre panier.");
-            window.location.href = "connexion.php";
-        </script>';
-    exit();
-}
-
-// Initialiser le panier dans la session si inexistant
-if (!isset($_SESSION['panier'])) {
-    $_SESSION['panier'] = [];
-}
-
-// Traitement des actions
-$message = '';
-$messageType = '';
-
-// Ajouter un produit au panier
-if (isset($_GET['action']) && $_GET['action'] === 'add' && isset($_GET['id_produit'])) {
-    $idProduit = (int) $_GET['id_produit'];
-
-    // Vérifier si le produit est déjà dans le panier
-    if (in_array($idProduit, $_SESSION['panier'])) {
-        $message = "Ce produit est déjà dans votre panier.";
-        $messageType = 'error';
-    } else {
-        $_SESSION['panier'][] = $idProduit;
-        $message = "Produit ajouté au panier avec succès !";
-        $messageType = 'success';
-    }
-}
-
-// Retirer un produit du panier
-if (isset($_GET['action']) && $_GET['action'] === 'remove' && isset($_GET['id_produit'])) {
-    $idProduit = (int) $_GET['id_produit'];
-    $key = array_search($idProduit, $_SESSION['panier']);
-    if ($key !== false) {
-        unset($_SESSION['panier'][$key]);
-        $_SESSION['panier'] = array_values($_SESSION['panier']); // Réindexer
-    }
-}
-
-// Vider le panier
-if (isset($_GET['action']) && $_GET['action'] === 'clear') {
-    $_SESSION['panier'] = [];
-    $message = "Votre panier a été vidé.";
-    $messageType = 'warning';
-}
-
-// Appliquer un code promo
-$codePromo = '';
-$reductionAppliquee = 0;
-if (isset($_POST['code_promo'])) {
-    $codePromo = trim($_POST['code_promo']);
-    // Vérifier le code promo dans la base de données
-    // Pour la démo, on simule une réduction de 10%
-    if ($codePromo === 'PROMO10') {
-        $reductionAppliquee = 10;
-        $message = "Code promo appliqué ! Vous bénéficiez de 10% de réduction.";
-        $messageType = 'success';
-    } else {
-        $message = "Code promo invalide ou non applicable à ces produits.";
-        $messageType = 'error';
-    }
-}
-
-// Récupérer les produits du panier depuis la base de données
-// Pour la démo, on simule des données
-$produitsCart = [];
-if (!empty($_SESSION['panier'])) {
-    // require_once 'config/database.php';
-    // $ids = implode(',', $_SESSION['panier']);
-    // $stmt = $pdo->query("SELECT p.*, s.titre, s.ville, s.photo 
-    //                      FROM produit p 
-    //                      JOIN salle s ON p.id_salle = s.id_salle 
-    //                      WHERE p.id_produit IN ($ids)");
-    // $produitsCart = $stmt->fetchAll();
-
-    // Données de démonstration
-    $produitsCart = [
-        [
-            'id_produit' => 11,
-            'titre' => 'Salle Debussy',
-            'ville' => 'Paris',
-            'date_arrivee' => '2025-06-20',
-            'date_depart' => '2025-06-22',
-            'prix' => 620,
-            'photo' => 'assets/images/debussy.jpg',
-            'capacite' => 45
-        ]
-    ];
-}
-
-// Calculer les totaux
-$sousTotal = 0;
-foreach ($produitsCart as $produit) {
-    $sousTotal += $produit['prix'];
-}
-$reduction = ($sousTotal * $reductionAppliquee) / 100;
-$sousTotal -= $reduction;
-$tva = $sousTotal * 0.20;
-$total = $sousTotal + $tva;
+require '../backend/panier.php';
 ?>
-
-
-<!-- <nav class="menu">
-        <a href='index.php'>Accueil</a>
-        <a href='reservation.php'>Réservation</a>
-        <a href='recherche.php'>Recherche</a>
-        <a href='profil.php'>Mon Profil</a>
-        <a href='panier.php' class='active'>Panier</a>
-        <a href='#'>Se déconnecter</a>
-    </nav> -->
-
-<main class="container panier-container">
+<main class="panier-container">
     <h2>Mon Panier</h2>
 
     <?php if ($messageType === 'success'): ?>
@@ -153,7 +37,7 @@ $total = $sousTotal + $tva;
         <div class="cart-items">
             <?php foreach ($produitsCart as $produit): ?>
                 <div class="cart-item">
-                    <img src="<?php echo htmlspecialchars($produit['photo']); ?>"
+                    <img src="assets/images/<?php echo htmlspecialchars($produit['photo']); ?>"
                         alt="<?php echo htmlspecialchars($produit['titre']); ?>" class="cart-item-image">
 
                     <div class="cart-item-details">
