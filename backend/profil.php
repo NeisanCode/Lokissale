@@ -1,6 +1,9 @@
 <?php
 require_once "../config/database.php";
 require_once "session.php";
+
+
+
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['membre']['id_membre'])) {
     echo '<script>

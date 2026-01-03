@@ -1,6 +1,8 @@
 <?php
 require "../config/database.php";
 require "../config/recherche.php";
+
+
 $date_arrivee = $_GET['date_arrivee'] ?? null;
 $date_depart = $_GET['date_depart'] ?? null;
 
@@ -15,7 +17,7 @@ if ($date_arrivee && $date_depart) {
         $message_type = 'error';
     } else {
         // Requête pour trouver les salles disponibles
-        $salles = getAvaibleRoom($date_arrivee, $date_depart);
+        $salles = getAvaibleRoom($pdo, $date_arrivee, $date_depart);
         if (count($salles) === 0) {
             $message = "Aucune salle disponible pour ces dates.";
             $message_type = 'info';

@@ -1,6 +1,7 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
 <?php require "../backend/salle.php" ?>
+<?php require "../config/database.php" ?>
 
 <main class="container-large">
     <!-- Présentation -->
@@ -13,7 +14,7 @@
     <section class="offres" style="margin-top:40px;">
         <h3>Salles disponibles</h3>
         <div class="offres-grid">
-            <?= get_salles(); ?>
+            <?= get_room($pdo); ?>
         </div>
     </section>
 </main>

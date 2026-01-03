@@ -41,9 +41,9 @@ function createOfferRoom(
     HTML;
 }
 // cette fonction permet de recupérer les salles
-function get_salles(?int $limit = null): string
+function get_room(PDO $pdo, ?int $limit = null): string
 {
-    $products = getLastProdsByRoom($limit);
+    $products = getLastProdsByRoom($pdo, $limit);
     $html = "";
     foreach ($products as $product) {
         $html .= createOfferRoom(
@@ -62,8 +62,8 @@ function get_salles(?int $limit = null): string
 }
 
 // cette fonction permet d'obtenir les 3 dernière salles
-function last_three_offers(): string
+function last_three_offers($pdo): string
 {
-    return get_salles(3);
+    return get_room($pdo, 3);
 }
 ?>

@@ -117,65 +117,9 @@
             Découvrez d'autres salles disponibles dans la même ville et aux dates proches
         </p>
 
-        <?php
-        /* 🔹 TRAITEMENT PHP À FAIRE
-           Rechercher des produits similaires :
-           - Même ville que la salle actuelle
-           - Dates proches (+-7 jours)
-           - etat = 0
-           - LIMIT 3
-        */
-        ?>
-
         <div class="offres-grid">
             <?= get_similar_offers(); ?>
-            <!-- Suggestion 1 -->
-            <!-- <article class="offre-card">
-                <img src="images/salles/salle-paris3.jpg" alt="Salle Van Gogh Paris">
-                <div class="offre-content">
-                    <h4>Salle Van Gogh – Paris</h4>
-                    <p>Salle élégante au cœur de Paris.</p>
-                    <p><strong>Capacité :</strong> 15 personnes</p>
-                    <p><strong>Dates :</strong> Du 25/01/2026 au 28/01/2026</p>
-                    <p><strong>Prix :</strong> 450 € HT</p>
-                    <div class="offre-actions">
-                        <a href="connexion.php">Se connecter</a>
-                        <a href="reservation_details.php?id_produit=4">Voir détails</a>
-                    </div>
-                </div>
-            </article> -->
 
-            <!-- Suggestion 2 -->
-            <!-- <article class="offre-card">
-                <img src="images/salles/salle-paris3.jpg" alt="Salle Monet Paris">
-                <div class="offre-content">
-                    <h4>Salle Monet – Paris</h4>
-                    <p>Espace convivial pour petites réunions.</p>
-                    <p><strong>Capacité :</strong> 12 personnes</p>
-                    <p><strong>Dates :</strong> Du 20/01/2026 au 24/01/2026</p>
-                    <p><strong>Prix :</strong> 380 € HT</p>
-                    <div class="offre-actions">
-                        <a href="connexion.php">Se connecter</a>
-                        <a href="reservation_details.php?id_produit=5">Voir détails</a>
-                    </div>
-                </div>
-            </article> -->
-
-            <!-- Suggestion 3 -->
-            <!-- <article class="offre-card">
-                <img src="assets/images/salle2.jpg" alt="Salle Renoir Paris">
-                <div class="offre-content">
-                    <h4>Salle Renoir – Paris</h4>
-                    <p>Grande salle pour événements.</p>
-                    <p><strong>Capacité :</strong> 40 personnes</p>
-                    <p><strong>Dates :</strong> Du 28/01/2026 au 02/02/2026</p>
-                    <p><strong>Prix :</strong> 820 € HT</p>
-                    <div class="offre-actions">
-                        <a href="connexion.php">Se connecter</a>
-                        <a href="reservation_details.php?id_produit=6">Voir détails</a>
-                    </div>
-                </div>
-            </article> -->
         </div>
     </section>
 </main>

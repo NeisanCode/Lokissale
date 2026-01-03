@@ -1,8 +1,7 @@
 <?php require_once 'database.php';
 
-function getAvaibleRoom($date_arrivee, $date_depart)
+function getAvaibleRoom( PDO $pdo,$date_arrivee, $date_depart)
 {
-    global $pdo;
     $sql = "SELECT p.id_produit, s.titre, s.description, s.capacite, s.photo, s.ville, p.prix
                 FROM produit p
                 JOIN salle s ON p.id_salle = s.id_salle

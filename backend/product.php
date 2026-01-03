@@ -1,7 +1,11 @@
 <?php
-require_once "../config/produit.php";
+
 require_once "salle.php";
 require_once "utils.php";
+require_once "../config/produit.php";
+require_once "../config/database.php";
+
+
 
 if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
     $id_product = (int) $_GET['id_produit'];
@@ -13,7 +17,7 @@ if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
     "produit" => $product,
     "avis" => $avis,
     "similar" => $offers
-] = get_prod_details($id_product);
+] = get_prod_details($pdo, $id_product);
 
 // salle details variables
 $title = $product['titre'];

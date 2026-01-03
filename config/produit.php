@@ -1,7 +1,6 @@
-<?php require_once "database.php";
-function get_prod_details(int $id_produit): array
+<?php
+function get_prod_details(PDO $pdo, int $id_produit): array
 {
-    global $pdo;
     // Préparer la première requête (produit + salle)
     $prod_details = $pdo->prepare(
         "SELECT 
@@ -74,9 +73,8 @@ function get_prod_details(int $id_produit): array
     ];
 
 }
-function getLastProdsByRoom(?int $limit = null): array
+function getLastProdsByRoom(PDO $pdo, ?int $limit = null): array
 {
-    global $pdo;
     $sql_command = "SELECT 
                         *
                     FROM (
