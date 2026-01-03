@@ -107,11 +107,15 @@ $tva = $sousTotal * 0.20;
 $total = $sousTotal + $tva;
 
 if (isset($_POST['pay'])) {
-    // 1. TRAITEMENT des données (ex: enregistrer en base)
-    // ...
-    var_dump ($_POST["pay"]);
-    // 2. REDIRECTION immédiate
-    // header("Location: merci.php"); 
+    $current_date = date('Y-m-d H:i:s');
+    $membre_id = $_SESSION["membre"]["id_membre"];
+    $commande = "INSERT INTO commande (id_membre, montant, `date`) VALUES (?, ?, ?) ";
 
+    $tmt = $pdo->prepare($commande);
+    foreach ($produitsCart as $prodcart) {
+        $tmt->execute([$membre_id, $prodcart["prix"], $current_date]);
+    }
+    header("Location: profil.php");
+    exit();
 }
 ?>

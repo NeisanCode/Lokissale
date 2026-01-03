@@ -119,17 +119,16 @@ require '../backend/panier.php';
 
             <!-- Actions -->
             <div class="cart-actions">
-
-                <a href="?action=clear" class="btn-action btn-clear"
-                    style="text-decoration: none; text-align: center; line-height: 1.5;"
-                    onclick="return confirm('Êtes-vous sûr de vouloir vider votre panier ?');">
-                    🗑️ Vider le panier
-                </a>
-                <button type="button" class="btn-action btn-pay" name="pay" id="btnPay">
-                    💳 Procéder au paiement
-                </button>
-
-
+                <form method="POST">
+                    <a href="?action=clear" class="btn-action btn-clear"
+                        style="text-decoration: none; text-align: center; line-height: 1.5;"
+                        onclick="return confirm('Êtes-vous sûr de vouloir vider votre panier ?');">
+                        🗑️ Vider le panier
+                    </a>
+                    <button type="submit" class="btn-action btn-pay" name="pay" id="btnPay">
+                        💳 Procéder au paiement
+                    </button>
+                </form>
             </div>
         </div>
     <?php endif; ?>
@@ -149,7 +148,6 @@ require '../backend/panier.php';
         // Pour la démo, on simule le paiement
         if (confirm('Confirmer le paiement de <?php echo number_format($total, 2, ',', ' '); ?> € ?')) {
             alert('Paiement effectué avec succès ! Un email de confirmation vous a été envoyé.');
-            window.location.href = 'profil.php';
         }
     });
 </script>
