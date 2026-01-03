@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
         if (in_array($imageFileType, $allowedTypes)) {
             if (move_uploaded_file($_FILES['photo']['tmp_name'], $targetFile)) {
-                $photo = $targetFile;
+                $photo = $fileName;
             }
         }
     }
