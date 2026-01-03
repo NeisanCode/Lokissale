@@ -15,7 +15,7 @@ if (isset($_GET['id_produit']) && is_numeric($_GET['id_produit'])) {
     "similar" => $offers
 ] = get_prod_details($id_product);
 
-// ---salle details variables
+// salle details variables
 $title = $product['titre'];
 $description = $product['description'];
 

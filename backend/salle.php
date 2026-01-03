@@ -1,6 +1,8 @@
 <?php
 require_once "../config/produit.php";
 require_once "utils.php";
+
+
 // cette fonction permet de creer les salles
 function createOfferRoom(
     string $photo,
@@ -38,6 +40,7 @@ function createOfferRoom(
         </article>
     HTML;
 }
+// cette fonction permet de recupérer les salles
 function get_salles(?int $limit = null): string
 {
     $products = getLastProdsByRoom($limit);
@@ -57,9 +60,10 @@ function get_salles(?int $limit = null): string
     }
     return $html;
 }
+
+// cette fonction permet d'obtenir les 3 dernière salles
 function last_three_offers(): string
 {
-    $limit = 3;
-    return get_salles($limit);
+    return get_salles(3);
 }
 ?>
