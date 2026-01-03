@@ -119,14 +119,17 @@ require '../backend/panier.php';
 
             <!-- Actions -->
             <div class="cart-actions">
+
                 <a href="?action=clear" class="btn-action btn-clear"
                     style="text-decoration: none; text-align: center; line-height: 1.5;"
                     onclick="return confirm('Êtes-vous sûr de vouloir vider votre panier ?');">
                     🗑️ Vider le panier
                 </a>
-                <button type="button" class="btn-action btn-pay" id="btnPay">
+                <button type="button" class="btn-action btn-pay" name="pay" id="btnPay">
                     💳 Procéder au paiement
                 </button>
+
+
             </div>
         </div>
     <?php endif; ?>

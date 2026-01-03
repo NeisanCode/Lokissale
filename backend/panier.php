@@ -81,15 +81,15 @@ if (!empty($_POST['code_promo'])) {
         $message = "Code promo invalide ou expiré.";
         $messageType = 'error';
     }
-}
 
+}
 
 // Récupérer les produits du panier depuis la base de données
 $produitsCart = [];
 if (!empty($_SESSION['panier'])) {
 
     $ids = implode(',', $_SESSION['panier']);
-    $stmt = $pdo->query("SELECT p.*, s.titre, s.ville, s.photo 
+    $stmt = $pdo->query("SELECT p.*, s.titre, s.ville, s.photo , s.capacite
                          FROM produit p 
                          JOIN salle s ON p.id_salle = s.id_salle 
                          WHERE p.id_produit IN ($ids)");
@@ -105,4 +105,13 @@ $reduction = ($sousTotal * $reductionAppliquee) / 100;
 $sousTotal -= $reduction;
 $tva = $sousTotal * 0.20;
 $total = $sousTotal + $tva;
+
+if (isset($_POST['pay'])) {
+    // 1. TRAITEMENT des données (ex: enregistrer en base)
+    // ...
+    var_dump ($_POST["pay"]);
+    // 2. REDIRECTION immédiate
+    // header("Location: merci.php"); 
+
+}
 ?>

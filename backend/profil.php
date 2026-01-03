@@ -18,19 +18,7 @@ $stmt = $pdo->prepare("SELECT * FROM membre WHERE id_membre = ?");
 $stmt->execute([$_SESSION["membre"]['id_membre']]);
 $membre = $stmt->fetch();
 
-// Données de démonstration
-// $membre = [
-//     'id_membre' => $_SESSION["membre"]['id_membre'],
-//     'pseudo' => $_SESSION["membre"]['pseudo'],
-//     'nom' => $_SESSION["membre"]['nom'],
-//     'prenom' => $_SESSION["membre"]['prenom'],
-//     'email' => $_SESSION["membre"]['email'],
-//     'sexe' => $_SESSION["membre"]['sexe'],
-//     'ville' => $_SESSION["membre"]['ville'],
-//     'cp' => $_SESSION["membre"]['cp'],
-//     'adresse' => $_SESSION["membre"]['adresse'],
-//     'statut' => $_SESSION["membre"]['statut'],
-// ];
+
 // Traitement de la mise à jour du profil
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update') {
     $pseudo = trim($_POST['pseudo']);
@@ -116,24 +104,6 @@ $stmtCommandes = $pdo->prepare("-- sql
 ");
 $stmtCommandes->execute([$membre['id_membre']]);
 $commandes = $stmtCommandes->fetchAll();
-
-// Données de démonstration pour les commandes
-// $commandes = [
-//     [
-//         'id_commande' => 1001,
-//         'date' => '2025-12-15 14:30:00',
-//         'montant' => 744,
-//         'nb_produits' => 1
-//     ],
-//     [
-//         'id_commande' => 1002,
-//         'date' => '2025-11-20 10:15:00',
-//         'montant' => 1020,
-//         'nb_produits' => 1
-//     ]
-// ];
-
-// Calculer les statistiques
 $totalCommandes = count($commandes);
 $totalDepense = array_sum(array_column($commandes, 'montant'));
 ?>

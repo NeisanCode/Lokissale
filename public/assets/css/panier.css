@@ -79,6 +79,8 @@
     font-size: 18px;
     font-weight: bold;
     transition: background 0.3s;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-remove:hover {
@@ -168,7 +170,6 @@
 }
 
 .btn-action {
-    flex: 1;
     padding: 15px;
     border: none;
     border-radius: 5px;
