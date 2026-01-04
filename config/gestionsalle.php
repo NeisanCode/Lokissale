@@ -26,15 +26,20 @@ function get_room(PDO $pdo)
     return $stmt->fetchAll();
 }
 
-function update_room(PDO $pdo, int $id_salle, string $name): bool
+function update_room(PDO $pdo, int $id_salle, array $values)
 {
-    $stmt = $pdo->prepare(
-        "UPDATE salle SET name = :name WHERE id_salle = :id"
-    );
-    return $stmt->execute([
-        'name' => $name,
-        'id' => $id_salle
-    ]);
+    $fields = [];
+    foreach ($values as $colonne => $value) {
+        $fields[] = "$colonne = ?";
+    }
+    $sql = "UPDATE salle SET " . implode(',', $fields) . " WHERE id_salle=?";
+    print($sql);
+    $update_values = array_values($values);
+    $update_values[] = $id_salle;
+
+    $tmt = $pdo->prepare($sql);
+    return $tmt->execute($update_values);
+
 }
 
 function count_prod(PDO $pdo, int $id_salle)
@@ -55,4 +60,10 @@ function delete_room(PDO $pdo, int $id_salle)
     return $res;
 }
 
-
+function get_photo(PDO $pdo, int $id_salle)
+{
+    $tmt = $pdo->prepare("SELECT photo FROM salle WHERE id_salle=?");
+    $tmt->execute([$id_salle]);
+    $photo = $tmt->fetch();
+    return $photo["photo"];
+}

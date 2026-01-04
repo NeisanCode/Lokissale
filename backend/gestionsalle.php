@@ -17,9 +17,8 @@ $messageType = '';
 $editMode = false;
 $salleToEdit = null;
 
-// Traitement de l'ajout de salle
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add') {
-    // Récupérer et valider les données
+function getMetaData(?PDO $pdo = null, ?int $id_salle = null)
+{
     $pays = trim($_POST['pays']);
     $ville = trim($_POST['ville']);
     $adresse = trim($_POST['adresse']);
@@ -30,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $categorie = $_POST['categorie'];
 
     // Traiter l'upload de l'image
-    $photo = '';
+    $photo = get_photo($pdo, $id_salle) ? isset($pdo, $id_salle) : "";
+
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
         $uploadDir = 'assets/images/';
         $fileName = time() . '_' . basename($_FILES['photo']['name']);
@@ -46,7 +46,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             }
         }
     }
-
+    return [
+        "pays" => $pays,
+        "ville" => $ville,
+        "adresse" => $adresse,
+        "cp" => $cp,
+        "titre" => $titre,
+        "description" => $description,
+        "capacite" => $capacite,
+        "categorie" => $categorie,
+        "photo" => $photo,
+        "fields" => ["pays", "ville", "adresse", "cp", "titre", "description", "capacite", "categorie", "photo"]
+    ];
+}
+// Traitement de l'ajout de salle
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add') {
+    $metadata = getMetaData();
+    $pays = $metadata["pays"];
+    $ville = $metadata["ville"];
+    $adresse = $metadata["adresse"];
+    $cp = $metadata["cp"];
+    $titre = $metadata["titre"];
+    $description = $metadata["description"];
+    $capacite = $metadata["capacite"];
+    $categorie = $metadata["categorie"];
+    $photo = $metadata["photo"];
     // Insérer dans la base de données
     if (add_room($pdo, $pays, $ville, $adresse, $cp, $titre, $description, $photo, $capacite, $categorie)) {
         $message = "Salle ajoutée avec succès !";
@@ -55,17 +79,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $message = "Erreur lors de l'ajout de la salle.";
         $messageType = 'error';
     }
-
-    $message = "Salle ajoutée avec succès !";
-    $messageType = 'success';
 }
 
 // Traitement de la modification
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'edit') {
     $idSalle = (int) $_POST['id_salle'];
-    // Traiter la mise à jour...
-    $message = "Salle modifiée avec succès !";
-    $messageType = 'success';
+    $metadata = getMetaData($pdo, $idSalle);
+    $update_values = array_slice($metadata, 0, -1);
+    $fields = $metadata["fields"];
+
+    if (update_room($pdo, $idSalle, $update_values)) {
+        $message = "Salle modifiée avec succès !";
+        $messageType = 'success';
+    } else {
+        $message = "Erreur lors de la modification de la salle.";
+        $messageType = 'error';
+    }
+
 }
 
 // Traitement de la suppression
@@ -104,4 +134,5 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
         }
     }
 }
+
 ?>
