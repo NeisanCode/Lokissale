@@ -29,7 +29,12 @@ function getMetaData(?PDO $pdo = null, ?int $id_salle = null)
     $categorie = $_POST['categorie'];
 
     // Traiter l'upload de l'image
-    $photo = get_photo($pdo, $id_salle) ? isset($pdo, $id_salle) : "";
+    $photo = '';
+
+    if (isset($pdo, $id_salle) && $id_salle !== null) {
+        $photo = get_photo($pdo, $id_salle) ?? '';
+    }
+
 
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
         $uploadDir = 'assets/images/';

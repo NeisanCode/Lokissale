@@ -9,7 +9,11 @@ require_once "../backend/session.php"; ?>
     <?= nav_menu("Recherche", "recherche.php"); ?>
 
     <?php if (isset($_SESSION["membre"]) && ($_SESSION["membre"]["id_membre"]) && $_SESSION["membre"]["statut"] == 1): ?>
-        <?= nav_menu("gestion-salle", "gestionsalle.php"); ?>
+        <?= nav_menu("salle", "gestionsalle.php"); ?>
+        <?= nav_menu("membre", "gestionmembre.php"); ?>
+        <?= nav_menu("produit", "gestionprod.php"); ?>
+        <?= nav_menu("avis", "gestionavis.php"); ?>
+        <?= nav_menu("promo", "gestionpromo.php"); ?>
 
 
     <?php elseif (isset($_SESSION["membre"]) && ($_SESSION["membre"]["id_membre"]) && $_SESSION["membre"]["statut"] == 0): ?>

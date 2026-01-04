@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="assets/css/newsletter.css">
 
     <link rel="stylesheet" href="assets/css/gestionsalle.css">
+    <link rel="stylesheet" href="assets/css/gestionmembre.css">
+    <link rel="stylesheet" href="assets/css/gestionprod.css">
+    <link rel="stylesheet" href="assets/css/gestionavis.css">
+    <link rel="stylesheet" href="assets/css/gestionpromo.css">
     <link rel="stylesheet" href="assets/css/motdepasseperdu.css">
     <link rel="stylesheet" href="assets/css/plansite.css">
     <link rel="stylesheet" href="assets/css/panier.css">
