@@ -20,14 +20,13 @@
     <link rel="stylesheet" href="../static/profil.css">
 
 
-    <link rel="stylesheet" href="../static/recherche.style">
-    <link rel="stylesheet" href="../static/reservations_details.style">
+    <link rel="stylesheet" href="../static/recherche.css">
+    <link rel="stylesheet" href="../static/reservations_details.css">
     <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
     <title>LOKISALLE</title>
 </head>
 
 <body>
-
     <header class="header">
         <div class="logo"></div>
         <h1>LOKISALLE</h1>

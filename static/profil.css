@@ -3,8 +3,9 @@
     margin: 30px auto;
 }
 
+/* 🔁 Remplacé : plus de violet — dégradé turquoise */
 .profil-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2c3e50, #1a252f);
     color: white;
     padding: 30px;
     border-radius: 8px;
@@ -24,6 +25,7 @@
     justify-content: center;
     font-size: 35px;
     flex-shrink: 0;
+    color: var(--color-text-dark); /* icône lisible sur fond clair */
 }
 
 .profil-info h2 {
@@ -53,17 +55,18 @@
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #ecf0f1;
+    border-bottom: 2px solid var(--color-bg-light);
 }
 
 .section-header h3 {
     margin: 0;
-    color: #2c3e50;
+    color: var(--color-text-dark);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+/* --- Reste inchangé au niveau structurel --- */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -72,14 +75,14 @@
 
 .info-item {
     padding: 15px;
-    background: #f8f9fa;
+    background: var(--color-bg-lighter);
     border-radius: 5px;
-    border-left: 4px solid #1abc9c;
+    border-left: 4px solid var(--color-accent-primary);
 }
 
 .info-label {
     font-size: 12px;
-    color: #7f8c8d;
+    color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 5px;
@@ -87,13 +90,14 @@
 
 .info-value {
     font-size: 16px;
-    color: #2c3e50;
+    color: var(--color-text-dark);
     font-weight: 600;
 }
 
+/* --- Boutons : gardés tels quels mais avec variables (déjà fait) --- */
 .btn-edit {
     padding: 10px 20px;
-    background: #f39c12;
+    background: var(--color-btn-edit);
     color: white;
     border: none;
     border-radius: 5px;
@@ -105,7 +109,7 @@
 }
 
 .btn-edit:hover {
-    background: #e67e22;
+    background: var(--color-btn-edit-hover);
 }
 
 .edit-form {
@@ -132,14 +136,14 @@
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--color-text-dark);
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
     padding: 12px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--color-input-border);
     border-radius: 5px;
     font-size: 14px;
     font-family: "Poppins", sans-serif;
@@ -149,7 +153,7 @@
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #1abc9c;
+    border-color: var(--color-accent-primary);
 }
 
 .form-actions {
@@ -161,7 +165,7 @@
 .btn-save {
     flex: 1;
     padding: 12px;
-    background: #27ae60;
+    background: var(--color-btn-save);
     color: white;
     border: none;
     border-radius: 5px;
@@ -171,13 +175,13 @@
 }
 
 .btn-save:hover {
-    background: #229954;
+    background: var(--color-btn-save-hover);
 }
 
 .btn-cancel {
     flex: 1;
     padding: 12px;
-    background: #95a5a6;
+    background: var(--color-btn-cancel);
     color: white;
     border: none;
     border-radius: 5px;
@@ -187,9 +191,10 @@
 }
 
 .btn-cancel:hover {
-    background: #7f8c8d;
+    background: var(--color-btn-cancel-hover);
 }
 
+/* --- Tableau --- */
 .commandes-table {
     width: 100%;
     border-collapse: collapse;
@@ -197,7 +202,7 @@
 }
 
 .commandes-table thead {
-    background: #34495e;
+    background: var(--color-bg-dark); /* opaque version of header/footer */
     color: white;
 }
 
@@ -205,11 +210,11 @@
 .commandes-table td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid var(--color-bg-light);
 }
 
 .commandes-table tbody tr:hover {
-    background: #f8f9fa;
+    background: var(--color-bg-lighter);
 }
 
 .status-badge {
@@ -220,13 +225,13 @@
 }
 
 .status-paid {
-    background: #d4edda;
-    color: #155724;
+    background: var(--color-success-bg);
+    color: var(--color-success-border-alt);
 }
 
 .btn-view-invoice {
     padding: 6px 12px;
-    background: #3498db;
+    background: var(--color-btn-invoice);
     color: white;
     border: none;
     border-radius: 4px;
@@ -237,13 +242,13 @@
 }
 
 .btn-view-invoice:hover {
-    background: #2980b9;
+    background: var(--color-btn-invoice-hover);
 }
 
 .empty-state {
     text-align: center;
     padding: 40px;
-    color: #7f8c8d;
+    color: var(--color-text-muted);
 }
 
 .empty-state-icon {
@@ -252,27 +257,28 @@
 }
 
 .required {
-    color: #e74c3c;
+    color: var(--color-error);
 }
 
 .success-message {
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
-    color: #155724;
+    background: var(--color-success-bg);
+    border: 1px solid var(--color-success-border);
+    color: var(--color-success-border-alt);
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
 .error-message {
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
+    background: var(--color-message-error-bg);
+    border: 1px solid var(--color-message-error-border);
+    color: var(--color-message-error-text);
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
+/* 🔁 Stats : plus de violet — même dégradé turquoise */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -281,7 +287,7 @@
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--color-bg-header-footer);
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -292,13 +298,17 @@
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: white; /* explicite */
 }
 
 .stat-label {
     font-size: 14px;
     opacity: 0.9;
+    color: white; /* explicite */
+    font-weight: bold;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     .profil-header {
         flex-direction: column;

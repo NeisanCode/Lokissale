@@ -27,15 +27,15 @@ require "../backend/profil.php"
 
     <!-- Statistiques rapides -->
     <div class="stats-grid">
-        <div class="stat-card">
+        <div class="stat-card" style="background:linear-gradient(135deg, #2c3e50, #1a252f)">
             <div class="stat-value"><?php echo $totalCommandes; ?></div>
             <div class="stat-label">Réservation<?php echo $totalCommandes > 1 ? 's' : ''; ?></div>
         </div>
-        <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <div class="stat-card" style="background: linear-gradient(135deg, #ef3362, #dd6c84);">
             <div class="stat-value"><?php echo number_format($totalDepense, 0, ',', ' '); ?> €</div>
             <div class="stat-label">Dépensé au total</div>
         </div>
-        <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <div class="stat-card" style="background: linear-gradient(135deg, #7a4d3f, #5f3930);">
             <div class="stat-value">
                 <?php echo $totalCommandes > 0 ? number_format($totalDepense / $totalCommandes, 0, ',', ' ') : 0; ?> €
             </div>

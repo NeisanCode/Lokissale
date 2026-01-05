@@ -3,8 +3,8 @@
 }
 
 .plan-section h3 {
-    color: #2c3e50;
-    border-bottom: 2px solid #1abc9c;
+    color: var(--color-text-dark);
+    border-bottom: 2px solid var(--color-accent-primary);
     padding-bottom: 8px;
     margin-bottom: 15px;
 }
@@ -24,17 +24,17 @@
     content: "►";
     position: absolute;
     left: 0;
-    color: #1abc9c;
+    color: var(--color-accent-primary);
 }
 
 .plan-section a {
-    color: #2c3e50;
+    color: var(--color-text-dark);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .plan-section a:hover {
-    color: #1abc9c;
+    color: var(--color-accent-primary);
     text-decoration: underline;
 }
 
@@ -45,4 +45,5 @@
 
 .subsection li:before {
     content: "▪";
+    color: var(--color-accent-primary); /* optionnel, mais cohérent */
 }

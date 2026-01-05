@@ -131,7 +131,7 @@
                         <button
                             onclick="deleteAvis(<?php echo $item['id_avis']; ?>, '<?php echo htmlspecialchars($item['pseudo']); ?>')"
                             class="btn-delete">
-                            ❌ Supprimer l'avis
+                            x Supprimer l'avis
                         </button>
                     </div>
                 </div>
