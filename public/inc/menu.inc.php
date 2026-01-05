@@ -4,7 +4,7 @@ require_once "../backend/session.php"; ?>
 
 
 <nav class="menu">
-    <?= nav_menu("Acceuil", "index.php"); ?>
+    <?= nav_menu("Acceuil", "home.php"); ?>
     <?= nav_menu("Reservation", "reservation.php"); ?>
     <?= nav_menu("Recherche", "recherche.php"); ?>
 

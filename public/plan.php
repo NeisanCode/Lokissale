@@ -1,13 +1,5 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
-<!-- 
-    <nav class="menu">
-        <a href='index.php'>Accueil</a>
-        <a href='reservation.php'>Réservation</a>
-        <a href='recherche.php'>Recherche</a>
-        <a href='connexion.php'>Connexion</a>
-        <a href='inscription.php'>Inscription</a>
-    </nav> -->
 
 <main class="container">
     <h2>Plan du Site</h2>
@@ -19,7 +11,7 @@
     <div class="plan-section">
         <h3>Pages Principales</h3>
         <ul>
-            <li><a href="index.php">Accueil</a> - Présentation de LOKISALLE et dernières offres</li>
+            <li><a href="home.php">Accueil</a> - Présentation de LOKISALLE et dernières offres</li>
             <li><a href="reservation.php">Réservation</a> - Catalogue complet de nos offres disponibles</li>
             <li><a href="recherche.php">Recherche</a> - Rechercher une salle par date</li>
             <li><a href="reservation_details.php">Détails d'une réservation</a> - Fiche détaillée d'une salle</li>
