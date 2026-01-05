@@ -1,6 +1,7 @@
-<?php require "inc/haut.inc.php" ?>
-<?php require "inc/menu.inc.php" ?>
-<?php require "../backend/gestionavis.php" ?>
+<?php require "inc/haut.inc.php";
+require "inc/menu.inc.php";
+require "../backend/gestionavis.php"
+?>
 
 <main class="admin-container">
     <!-- En-tête admin -->

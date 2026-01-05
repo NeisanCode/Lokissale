@@ -1,5 +1,6 @@
-<?php require "inc/haut.inc.php" ?>
-<?php require "inc/menu.inc.php" ?>
+<?php 
+require "inc/haut.inc.php";
+require "inc/menu.inc.php" ?>
 
 <main class="container">
     <!-- Formulaire de contact -->

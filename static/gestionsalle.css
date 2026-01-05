@@ -8,7 +8,7 @@
 }
 
 .admin-header {
-    background: linear-gradient(135deg, #2c3e50, #1a252f);
+    background: var(--color-header);
     color: white;
     padding: 20px;
     border-radius: 8px;

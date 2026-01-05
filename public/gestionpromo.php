@@ -1,6 +1,8 @@
-<?php require "inc/haut.inc.php" ?>
-<?php require "inc/menu.inc.php" ?>
-<?php require "../backend/gestionpromo.php" ?>
+<?php 
+require "inc/haut.inc.php";
+require "inc/menu.inc.php";
+require "../backend/gestionpromo.php"
+?>
 <main class="admin-container">
     <!-- En-tête admin -->
     <div class="admin-header">

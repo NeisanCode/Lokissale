@@ -15,8 +15,8 @@ require_once "../backend/session.php"; ?>
         <?= nav_menu("Produit", "gestionprod.php"); ?>
         <?= nav_menu("Avis", "gestionavis.php"); ?>
         <?= nav_menu("Promo", "gestionpromo.php"); ?>
-
-
+        <?= nav_menu("Stastistique", "gestionstat.php"); ?>
+        <?= nav_menu("Newsletter", "adminnewsletter.php"); ?>
 
     <?php elseif (isset($_SESSION["membre"]) && ($_SESSION["membre"]["id_membre"]) && $_SESSION["membre"]["statut"] == 0): ?>
         <?= nav_menu("Profil", "profil.php"); ?>
