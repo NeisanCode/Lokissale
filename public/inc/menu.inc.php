@@ -9,16 +9,17 @@ require_once "../backend/session.php"; ?>
     <?= nav_menu("Recherche", "recherche.php"); ?>
 
     <?php if (isset($_SESSION["membre"]) && ($_SESSION["membre"]["id_membre"]) && $_SESSION["membre"]["statut"] == 1): ?>
-        <?= nav_menu("salle", "gestionsalle.php"); ?>
-        <?= nav_menu("membre", "gestionmembre.php"); ?>
-        <?= nav_menu("produit", "gestionprod.php"); ?>
-        <?= nav_menu("avis", "gestionavis.php"); ?>
-        <?= nav_menu("promo", "gestionpromo.php"); ?>
+        <?= nav_menu("Salle", "gestionsalle.php"); ?>
+        <?= nav_menu("Membre", "gestionmembre.php"); ?>
+        <?= nav_menu("Produit", "gestionprod.php"); ?>
+        <?= nav_menu("Avis", "gestionavis.php"); ?>
+        <?= nav_menu("Promo", "gestionpromo.php"); ?>
+        <?= nav_menu("Profil", "profil.php"); ?>
 
 
     <?php elseif (isset($_SESSION["membre"]) && ($_SESSION["membre"]["id_membre"]) && $_SESSION["membre"]["statut"] == 0): ?>
-        <?= nav_menu("Votre profil", "profil.php"); ?>
-        <?= nav_menu("Votre panier", "panier.php"); ?>
+        <?= nav_menu("Profil", "profil.php"); ?>
+        <?= nav_menu("Panier", "panier.php"); ?>
 
 
     <?php else: ?>
