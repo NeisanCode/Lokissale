@@ -4,6 +4,12 @@ require "inc/menu.inc.php";
 require "../backend/adminnewsletter.php";
 ?>
 <main class="container-large">
+    <?php if ($message): ?>
+        <div class="<?php echo $messageType === 'success' ? 'success-message' : 'error-message'; ?>">
+            <strong><?php echo $messageType === 'success' ? '✓' : '⚠️'; ?></strong>
+            <?php echo $message; ?>
+        </div>
+    <?php endif; ?>
     <section class="newsletter-admin">
         <h2>> Envoyer la newsletter</h2>
 
@@ -22,7 +28,7 @@ require "../backend/adminnewsletter.php";
             unset($_SESSION['succes']); ?></div>
         <?php endif; ?>
 
-        <form id="form-newsletter" class="newsletter-form" method="POST" action="newsletter.php">
+        <form id="form-newsletter" class="newsletter-form" method="POST" action="">
             <div class="form-group">
                 <label for="expediteur">Expéditeur :</label>
                 <input type="email" id="expediteur" name="expediteur" value="contact@lokisalle.fr" required>
@@ -45,6 +51,7 @@ require "../backend/adminnewsletter.php";
                 <button type="reset" class="btn-reset">Effacer</button>
             </div>
         </form>
+
 
         <!-- Section d'aperçu -->
         <div id="preview-section" class="preview-section" style="display: none;">

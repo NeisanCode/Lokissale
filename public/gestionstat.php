@@ -329,20 +329,6 @@ require "../backend/gestionstat.php"
     </div>
 </main>
 
-<!-- ========================================
-         FOOTER
-         ======================================== -->
-<footer class="footer">
-    <p>© LOKISALLE - Administration | </p>
-    <nav>
-        <a href="mentions.php">Mentions légales</a> |
-        <a href="cgv.php">CGV</a>
-    </nav>
-</footer>
-
-<!-- ========================================
-         JAVASCRIPT
-         ======================================== -->
 <script>
     // Animation des barres de progression au chargement
     window.addEventListener('load', function () {

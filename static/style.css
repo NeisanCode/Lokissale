@@ -4,7 +4,7 @@
     /* Couleurs de fond sombres */
     --color-bg-header-footer: rgba(44, 62, 80, 0.9);
     --color-bg-menu: rgba(52, 73, 94, 0.9);
-    --color-header : linear-gradient(135deg, #2c3e50, #1a252f);
+    --color-header: linear-gradient(135deg, #2c3e50, #1a252f);
     /* Couleurs primaires (accent) */
     --color-accent-primary: #1abc9c;
     --color-accent-primary-hover-menu: #1abc9c79; /* valeur exacte conservée */
@@ -36,6 +36,14 @@
 
     /* Tableaux */
     --color-table-header-bg: #34495e; /* note : proche de ton --color-bg-menu opaque */
+
+    /* Couleurs de fond secondaires */
+    --color-bg-lighter: #f8f9fa; /* gris très clair */
+    --color-bg-white: #ffffff; /* déjà ajouté précédemment, mais rappel */
+
+    /* Couleurs d’interface spécifiques */
+    --color-rating: #f39c12; /* jaune pour les étoiles/notes */
+    --color-text-muted: #7f8c8d; /* gris moyen — optionnel, mais propre */
 }
 
 * {

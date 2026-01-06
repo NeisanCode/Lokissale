@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../static/gestionprod.css">
     <link rel="stylesheet" href="../static/gestionavis.css">
     <link rel="stylesheet" href="../static/gestionpromo.css">
-    <link rel="stylesheet" href="../static/gestionpromo.css">
+    <link rel="stylesheet" href="../static/gestionstat.css">
     <link rel="stylesheet" href="../static/adminnewsletter.css">
 
 
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../static/plansite.css">
     <link rel="stylesheet" href="../static/panier.css">
     <link rel="stylesheet" href="../static/profil.css">
+    <link rel="stylesheet" href="../static/deconnexion.css">
 
 
     <link rel="stylesheet" href="../static/recherche.css">

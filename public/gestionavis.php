@@ -1,4 +1,5 @@
-<?php require "inc/haut.inc.php";
+<?php 
+require "inc/haut.inc.php";
 require "inc/menu.inc.php";
 require "../backend/gestionavis.php"
 ?>
@@ -141,20 +142,6 @@ require "../backend/gestionavis.php"
     <?php endif; ?>
 </main>
 
-<!-- ========================================
-         FOOTER
-         ======================================== -->
-<footer class="footer">
-    <p>© LOKISALLE - Administration | </p>
-    <nav>
-        <a href="mentions.php">Mentions légales</a> |
-        <a href="cgv.php">CGV</a>
-    </nav>
-</footer>
-
-<!-- ========================================
-         JAVASCRIPT
-         ======================================== -->
 <script>
     function deleteAvis(id, pseudo) {
         if (confirm('⚠️ ATTENTION !\n\nVous êtes sur le point de supprimer l\'avis de : @' + pseudo + '\n\nCette action est IRRÉVERSIBLE !\n\nVoulez-vous vraiment continuer ?')) {

@@ -22,4 +22,14 @@ try {
     $nb_abonnes = 0;
     // Vous pourriez logger l'erreur
 }
-
+$message = '';
+$messageType = '';
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    if (isset($_POST["expediteur"]) && isset($_POST["sujet"]) && isset($_POST["message"])) {
+        $message = "newsletter envoyée avec succès";
+        $messageType = "success";
+    } else {
+        $message = "Une erreur est survenu lors de l'envoi de message";
+        $messageType = 'error';
+    }
+}

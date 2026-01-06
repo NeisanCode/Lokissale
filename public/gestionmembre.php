@@ -181,20 +181,6 @@ require "../backend/gestionmembre.php";
     </div>
 </main>
 
-<!-- ========================================
-         FOOTER
-         ======================================== -->
-<footer class="footer">
-    <p>© LOKISALLE - Administration | </p>
-    <nav>
-        <a href="mentions.php">Mentions légales</a> |
-        <a href="cgv.php">CGV</a>
-    </nav>
-</footer>
-
-<!-- ========================================
-         JAVASCRIPT
-         ======================================== -->
 <script>
     function toggleForm() {
         const form = document.getElementById('formCreate');

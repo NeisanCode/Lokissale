@@ -2,9 +2,6 @@
 require "inc/menu.inc.php" ;
 require "../backend/gestionprod.php" ;
  ?>
-
-
-
     <main class="admin-container">
         <!-- En-tête admin -->
         <div class="admin-header">
