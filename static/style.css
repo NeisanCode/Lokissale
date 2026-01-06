@@ -66,30 +66,6 @@ body {
     background: url("/public/assets/images/logo.png") center/cover;
 }
 
-.typewriter {
-    position: absolute;
-    top: -3%;
-    left: 50%;
-    translate: -50% -50%;
-    font-size: 15px;
-    color: var(--color-text-dark);
-    text-align: center;
-    margin-top: 50px;
-}
-
-.typewriter .text {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid var(--color-accent-dark);
-    animation: typing 10s steps(42) forwards, blink 0.8s step-end infinite,
-        erase 10s steps(42) 10s forwards;
-    animation-iteration-count: infinite;
-}
-
-@keyframes typing { from { width: 0; } to { width: 100%; } }
-@keyframes erase { from { width: 100%; } to { width: 0; } }
-@keyframes blink { 50% { border-color: transparent; } }
 
 /* Menu de navigation */
 .menu {
@@ -196,10 +172,5 @@ body {
     .container {
         width: 90%;
         margin: 20px auto;
-    }
-
-    /* Masquer le typewriter sur mobile pour éviter les bugs de superposition */
-    .typewriter {
-        display: none;
     }
 }
