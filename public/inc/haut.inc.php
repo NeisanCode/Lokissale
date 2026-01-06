@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../static/adminnewsletter.css">
 
 
-    <link rel="stylesheet" href="../static/motdepasseperdu.css">
+    <link rel="stylesheet" href="../static/mdp.css">
     <link rel="stylesheet" href="../static/plansite.css">
     <link rel="stylesheet" href="../static/panier.css">
     <link rel="stylesheet" href="../static/profil.css">

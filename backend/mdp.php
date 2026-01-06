@@ -1,6 +1,12 @@
 <?php
 require_once '../config/database.php';
 require_once 'session.php';
+require_once '../libs/PHPMailer/src/Exception.php';
+require_once '../libs/PHPMailer/src/PHPMailer.php';
+require_once '../libs/PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 
 if (isset($_SESSION['membre']['id_membre'])) {
@@ -25,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
         // Connexion à la base de données
 
         // Vérifier si l'email existe
-        $stmt = $pdo->prepare("SELECT id_membre, pseudo FROM membres WHERE email = ?");
+        $stmt = $pdo->prepare("SELECT id_membre, pseudo FROM membre WHERE email = ?");
         $stmt->execute([$email]);
         $membre = $stmt->fetch();
 
@@ -35,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
             $mdpHash = password_hash($nouveauMdp, PASSWORD_DEFAULT);
 
             // Mettre à jour la base de données
-            $updateStmt = $pdo->prepare("UPDATE membres SET mdp = ? WHERE id_membre = ?");
+            $updateStmt = $pdo->prepare("UPDATE membre SET mdp = ? WHERE id_membre = ?");
             $updateStmt->execute([$mdpHash, $membre['id_membre']]);
 
             // Envoyer l'email

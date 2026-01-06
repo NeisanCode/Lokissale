@@ -1,24 +1,23 @@
 <?php
 require_once "../config/connexion.php";
-require_once "session.php"; 
+require_once "session.php";
 
 $message = '';
 $message_type = '';
 $membre_connecte = null;
-
+$forgotten=false;
 // Initialisation une seule fois
 if (!isset($_SESSION['attempts'])) {
     $_SESSION['attempts'] = 0;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     if ($_SESSION['attempts'] >= 3) {
         $message = "Trop de tentatives. Réessayez plus tard.";
         $message_type = 'error';
+        $forgotten = true;
 
     } else {
-
         $email = trim($_POST['email'] ?? '');
         $mdp = $_POST['password'] ?? '';
 
@@ -28,12 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
 
             $membre = checkUser($email);
-
             if (!$membre) {
                 $message = "Aucun compte trouvé pour cet email.";
                 $message_type = 'error';
                 $_SESSION['attempts']++;
-
             } elseif (!password_verify($mdp, $membre['mdp'])) {
                 $_SESSION['attempts']++;
                 $message = "Mot de passe incorrect (" . $_SESSION['attempts'] . "/3).";
@@ -52,6 +49,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
-
-print_r($_SESSION["attempt"]);

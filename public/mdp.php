@@ -1,6 +1,7 @@
 <?php 
 require "inc/haut.inc.php";
 require "inc/menu.inc.php"; 
+require "../backend/mdp.php";
 ?>
 
 

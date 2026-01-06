@@ -26,7 +26,7 @@ require "../backend/connexion.php";
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" autocomplete="current-password" required minlength="6"
                     placeholder="Votre mot de passe">
-
+                <a href="mdp.php" style="font-size: 14px">Mot de passe oublié ?</a>
                 <button type="submit">Se connecter</button>
             </form>
             <p style="text-align:center; margin-top:15px;">

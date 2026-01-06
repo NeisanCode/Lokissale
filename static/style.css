@@ -44,6 +44,9 @@
     /* Couleurs d’interface spécifiques */
     --color-rating: #f39c12; /* jaune pour les étoiles/notes */
     --color-text-muted: #7f8c8d; /* gris moyen — optionnel, mais propre */
+
+   --color-success-bg:#d4edda;
+   --color-success-border:#c3e6cb;
 }
 
 * {
