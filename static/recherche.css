@@ -119,6 +119,7 @@
     color: var(--color-text-white);
     text-decoration: none;
     margin: 0 5px;
+    font-weight: bold;
 }
 
 /* Responsive */
