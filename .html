@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags essentiels pour le SEO -->
+    <title>LOKISALLE - Location de salles à Paris, Lyon, Marseille | Espaces événementiels professionnels</title>
+    <meta name="description" content="LOKISALLE spécialiste de la location de salles pour réunions, séminaires et événements. Réservez en ligne des espaces modernes et équipés à Paris, Lyon et Marseille.">
+    
+    <!-- Keywords pour référence (moins important mais utile) -->
+    <meta name="keywords" content="location salle, salles réunion, séminaires, événements professionnels, Paris, Lyon, Marseille, salle équipée, réservation salle">
+    
+    <!-- Auteur et droits -->
+    <meta name="author" content="LOKISALLE">
+    <meta name="copyright" content="LOKISALLE">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="LOKISALLE - Location de salles professionnelles">
+    <meta property="og:description" content="Réservez vos salles de réunion, séminaires et événements à Paris, Lyon et Marseille.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lokisalle.fr/">
+    <meta property="og:image" content="https://www.lokisalle.fr/assets/images/logo-social.jpg">
+    <meta property="og:image:alt" content="Logo LOKISALLE - Location de salles">
+    <meta property="og:site_name" content="LOKISALLE">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LOKISALLE - Location de salles professionnelles">
+    <meta name="twitter:description" content="Réservez vos salles de réunion, séminaires et événements à Paris, Lyon et Marseille.">
+    <meta name="twitter:image" content="https://www.lokisalle.fr/assets/images/logo-social.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.lokisalle.fr/">
+    
+    <!-- Favicon et icons -->
+    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LOKISALLE",
+      "description": "Spécialiste de la location de salles pour réunions, séminaires, formations et événements professionnels ou privés",
+      "url": "https://www.lokisalle.fr/",
+      "logo": "https://www.lokisalle.fr/assets/images/logo.png",
+      "image": "https://www.lokisalle.fr/assets/images/logo-social.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": ["Paris", "Lyon", "Marseille"],
+        "addressCountry": "FR"
+      },
+      "telephone": "+33 1 23 45 67 89",
+      "email": "contact@lokisalle.fr",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "priceRange": "€€",
+      "sameAs": [
+        "https://www.facebook.com/lokisalle/",
+        "https://www.linkedin.com/company/lokisalle/",
+        "https://www.instagram.com/lokisalle/"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Salle Monet",
+          "description": "Salle baignée de lumière naturelle pour ateliers et séminaires",
+          "price": "579",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Salle Debussy",
+          "description": "Salle contemporaine et chaleureuse pour réunions",
+          "price": "650",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Salle Matisse",
+          "description": "Salle spacieuse et moderne pour conférences et événements",
+          "price": "850",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="stylesheet" href="_./static/style.css">
+    <link rel="stylesheet" href="_./static/welcome.css">
+    
+    <!-- Preload des images critiques -->
+    <link rel="preload" as="image" href="assets/images/monet.jpg" imagesrcset="assets/images/monet-400.jpg 400w, assets/images/monet-800.jpg 800w, assets/images/monet-1200.jpg 1200w" imagesizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px">
+    <link rel="preload" as="image" href="assets/images/background.jpg">
+    
+    <!-- Alternative CSS pour impression -->
+    <link rel="stylesheet" href="_./static/print.css" media="print">
+    
+    <!-- Sitemap et robots -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Skip to main content pour l'accessibilité -->
+    <a href="#main-content" class="sr-only skip-link">Aller au contenu principal</a>
+    
+    <header class="header" role="banner" aria-label="En-tête principal">
+        <div class="logo" role="img" aria-label="Logo LOKISALLE">
+            <img src="assets/images/logo.png" alt="LOKISALLE - Location de salles professionnelles" width="50" height="50" loading="lazy">
+        </div>
+        <h1 itemprop="name">LOKISALLE - Location de salles professionnelles</h1>
+        <div class="typewriter" aria-hidden="true">
+            <span class="text">Lokisalle - L'espace parfait, au bon moment.</span>
+        </div>
+    </header>
+
+    <nav class="menu" role="navigation" aria-label="Menu principal">
+        <ul role="menubar">
+            <li role="none"><a href='home.php' class='active' role="menuitem" aria-current="page">Accueil</a></li>
+            <li role="none"><a href='reservation.php' role="menuitem">Réservations</a></li>
+            <li role="none"><a href='recherche.php' role="menuitem">Recherche</a></li>
+            <li role="none"><a href='profil.php' role="menuitem">Profil</a></li>
+            <li role="none"><a href='gestionsalle.php' role="menuitem">Salle</a></li>
+            <li role="none"><a href='gestionmembre.php' role="menuitem">Membre</a></li>
+            <li role="none"><a href='gestionprod.php' role="menuitem">Produit</a></li>
+            <li role="none"><a href='gestionavis.php' role="menuitem">Avis</a></li>
+            <li role="none"><a href='gestionpromo.php' role="menuitem">Promo</a></li>
+            <li role="none"><a href='gestionstat.php' role="menuitem">Statistiques</a></li>
+        </ul>
+    </nav>
+
+    <main class="container-large" id="main-content" role="main">
+        <!-- Présentation -->
+        <section class="bienvenue" aria-labelledby="welcome-title">
+            <h2 id="welcome-title">Bienvenue sur <strong>LOKISALLE</strong></h2>
+            <p><strong>LOKISALLE</strong> est spécialisée dans la location de salles pour réunions, séminaires, formations et événements professionnels ou privés.</p>
+            <p>Présente à <strong>Paris</strong>, <strong>Lyon</strong> et <strong>Marseille</strong>, notre plateforme vous permet de réserver facilement des salles modernes et entièrement équipées.</p>
+            <p>Nous proposons des espaces adaptés à tous vos besoins : petites réunions d'équipe, grands séminaires, formations professionnelles ou événements spéciaux.</p>
+        </section>
+
+        <!-- Offres -->
+        <section class="offres" aria-labelledby="offers-title">
+            <h2 id="offers-title">Nos dernières offres de location de salles</h2>
+            <p class="section-description">Découvrez nos salles les plus demandées pour vos événements professionnels.</p>
+            
+            <div class="offres-grid" role="list">
+                <!-- Offre 1 -->
+                <article class="offre-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <img src="assets/images/monet.jpg" 
+                         alt="Salle Monet - Salle de réunion lumineuse pour ateliers et séminaires" 
+                         itemprop="image"
+                         width="400" 
+                         height="300"
+                         loading="lazy">
+                    <div class="offre-content">
+                        <h3 itemprop="name">Salle Monet</h3>
+                        <p class="description-tronquee" itemprop="description">Salle baignée de lumière naturelle, parfaite pour ateliers, séminaires et rencontres professionnelles. Son ambiance calme favorise la concentration et les échanges. Dispose de vidéoprojecteur, audio performant, wifi et climatisation.</p>
+                        
+                        <div class="offre-details" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <p><strong>Date :</strong> Du 27/01/2026 au 06/01/2026</p>
+                            <p><strong>Capacité :</strong> <span itemprop="description">50 personnes</span></p>
+                            <p><strong>Prix :</strong> <span itemprop="price" content="579">579</span> <span itemprop="priceCurrency" content="EUR">€</span></p>
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                            <meta itemprop="url" content="https://www.lokisalle.fr/reservation_details.php?id_produit=11">
+                        </div>
+                        
+                        <div class="offre-actions">
+                            <a href="reservation_details.php?id_produit=11" aria-label="Voir les détails de la Salle Monet">Voir détails</a>
+                            <a href="panier.php?action=add&id_produit=11" aria-label="Ajouter la Salle Monet au panier">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Offre 2 -->
+                <article class="offre-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <img src="assets/images/debussy.jpg" 
+                         alt="Salle Debussy - Salle contemporaine pour réunions professionnelles" 
+                         itemprop="image"
+                         width="400" 
+                         height="300"
+                         loading="lazy">
+                    <div class="offre-content">
+                        <h3 itemprop="name">Salle Debussy</h3>
+                        <p class="description-tronquee" itemprop="description">Salle contemporaine et chaleureuse, adaptée aux réunions et événements professionnels. L'ambiance est à la fois professionnelle et accueillante. Dotée de technologies performantes : vidéo, audio, wifi et climatisation.</p>
+                        
+                        <div class="offre-details" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <p><strong>Date :</strong> Du 12/06/2025 au 10/06/2025</p>
+                            <p><strong>Capacité :</strong> <span itemprop="description">45 personnes</span></p>
+                            <p><strong>Prix :</strong> <span itemprop="price" content="650">650</span> <span itemprop="priceCurrency" content="EUR">€</span></p>
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                            <meta itemprop="url" content="https://www.lokisalle.fr/reservation_details.php?id_produit=10">
+                        </div>
+                        
+                        <div class="offre-actions">
+                            <a href="reservation_details.php?id_produit=10" aria-label="Voir les détails de la Salle Debussy">Voir détails</a>
+                            <a href="panier.php?action=add&id_produit=10" aria-label="Ajouter la Salle Debussy au panier">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Offre 3 -->
+                <article class="offre-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+                    <img src="assets/images/matisse.jpg" 
+                         alt="Salle Matisse - Grande salle moderne pour conférences et événements d'entreprise" 
+                         itemprop="image"
+                         width="400" 
+                         height="300"
+                         loading="lazy">
+                    <div class="offre-content">
+                        <h3 itemprop="name">Salle Matisse</h3>
+                        <p class="description-tronquee" itemprop="description">Salle spacieuse et moderne, parfaite pour conférences, séminaires et événements d'entreprise. Son aménagement optimise le confort et la productivité. Équipée des dernières technologies : vidéoprojecteur, système audio, wifi et climatisation.</p>
+                        
+                        <div class="offre-details" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <p><strong>Date :</strong> Du 03/06/2025 au 01/06/2025</p>
+                            <p><strong>Capacité :</strong> <span itemprop="description">60 personnes</span></p>
+                            <p><strong>Prix :</strong> <span itemprop="price" content="850">850</span> <span itemprop="priceCurrency" content="EUR">€</span></p>
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                            <meta itemprop="url" content="https://www.lokisalle.fr/reservation_details.php?id_produit=9">
+                        </div>
+                        
+                        <div class="offre-actions">
+                            <a href="reservation_details.php?id_produit=9" aria-label="Voir les détails de la Salle Matisse">Voir détails</a>
+                            <a href="panier.php?action=add&id_produit=9" aria-label="Ajouter la Salle Matisse au panier">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section CTA cachée pour SEO -->
+        <section class="cta-seo" hidden>
+            <h2>Location de salles professionnelles à Paris, Lyon et Marseille</h2>
+            <p>LOKISALLE vous propose la location de salles pour tous vos événements professionnels. Que vous ayez besoin d'une salle de réunion à Paris, d'un espace pour séminaire à Lyon ou d'une salle pour événement à Marseille, nous avons la solution adaptée.</p>
+            <p>Nos salles sont équipées des dernières technologies (vidéoprojecteur, système audio, wifi, climatisation) et peuvent accueillir de 10 à 100 personnes selon vos besoins.</p>
+            <p>Réservez facilement en ligne votre salle pour réunion, séminaire, formation ou événement professionnel.</p>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p><strong>LOKISALLE</strong> - Location de salles pour événements professionnels</p>
+            
+            <nav aria-label="Navigation du pied de page">
+                <ul role="list">
+                    <li><a href="mentions.php">Mentions légales</a></li>
+                    <li><a href="cgv.php">Conditions Générales de Vente</a></li>
+                    <li><a href="plan.php">Plan du site</a></li>
+                    <li><a href="#" onclick="window.print(); return false;" role="button">Imprimer cette page</a></li>
+                    <li><a href="newsletter.php">S'inscrire à la newsletter</a></li>
+                    <li><a href="contact.php">Contactez-nous</a></li>
+                </ul>
+            </nav>
+            
+            <address>
+                <p>Adresse : Paris, Lyon, Marseille</p>
+                <p>Téléphone : <a href="tel:+33123456789">01 23 45 67 89</a></p>
+                <p>Email : <a href="mailto:contact@lokisalle.fr">contact@lokisalle.fr</a></p>
+            </address>
+            
+            <div class="social-links" aria-label="Réseaux sociaux">
+                <a href="https://www.facebook.com/lokisalle/" aria-label="Facebook LOKISALLE" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.linkedin.com/company/lokisalle/" aria-label="LinkedIn LOKISALLE" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/lokisalle/" aria-label="Instagram LOKISALLE" rel="noopener noreferrer">Instagram</a>
+            </div>
+            
+            <div class="copyright" role="contentinfo">
+                <p>&copy; 2025 LOKISALLE - Tous droits réservés | <a href="politique-confidentialite.php">Politique de confidentialité</a> | <a href="cookies.php">Gestion des cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts optimisés -->
+    <script src="js/inscription.js" defer></script>
+    <script>
+        // Script pour analytics et performance
+        (function() {
+            // Mesure des Core Web Vitals
+            if ('performance' in window) {
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        const timing = performance.timing;
+                        const loadTime = timing.loadEventEnd - timing.navigationStart;
+                        console.log('Temps de chargement:', loadTime + 'ms');
+                    }, 0);
+                });
+            }
+            
+            // Lazy loading amélioré
+            document.addEventListener('DOMContentLoaded', function() {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.src = img.dataset.src;
+                                img.classList.add('loaded');
+                                imageObserver.unobserve(img);
+                            }
+                        });
+                    });
+                    
+                    images.forEach(img => imageObserver.observe(img));
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

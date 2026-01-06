@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../static/welcome.css">
     <link rel="stylesheet" href="../static/connexion.css">
     <link rel="stylesheet" href="../static/newsletter.css">
-
+    
     <link rel="stylesheet" href="../static/gestionsalle.css">
     <link rel="stylesheet" href="../static/gestionmembre.css">
     <link rel="stylesheet" href="../static/gestionprod.css">
