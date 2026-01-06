@@ -30,7 +30,7 @@ require "../backend/inscription.php"; // Inclure la logique de traitement
 
             <label for="sexe">Sexe</label>
             <select id="sexe" name="sexe" required>
-                <option value="Masculin" selected >Homme</option>
+                <option value="Masculin" selected>Homme</option>
                 <option value="Feminin" <?= (isset($_POST['sexe']) && $_POST['sexe'] === 'Feminin') ? 'selected' : '' ?>>
                     Femme
                 </option>
@@ -57,7 +57,7 @@ require "../backend/inscription.php"; // Inclure la logique de traitement
 
         <?php if ($membre_inscrit): ?>
             <p style="text-align:center;">
-                <a href="dashboard.php">Aller au tableau de bord</a>
+                <a href="profil.php">Voir la page de profil</a>
             </p>
         <?php endif; ?>
 

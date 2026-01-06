@@ -22,7 +22,7 @@ require "../backend/adminnewsletter.php";
             unset($_SESSION['succes']); ?></div>
         <?php endif; ?>
 
-        <form id="form-newsletter" class="newsletter-form" method="POST" action="traitement_newsletter.php">
+        <form id="form-newsletter" class="newsletter-form" method="POST" action="newsletter.php">
             <div class="form-group">
                 <label for="expediteur">Expéditeur :</label>
                 <input type="email" id="expediteur" name="expediteur" value="contact@lokisalle.fr" required>
@@ -58,18 +58,6 @@ require "../backend/adminnewsletter.php";
         </div>
     </section>
 </main>
-
-<footer class="footer">
-    <p>● LOKISALLE | </p>
-    <nav>
-        <a href="mentions.php">Mentions légales</a>
-        <a href="cgv.php">CGV</a>
-        <a href="plan.php">plan du site</a>
-        <a href="#" onclick="window.print()">Imprimer</a>
-        <a href="newsletter.php">s'inscrire à la newsletter</a>
-        <a href="contact.php">contact</a>
-    </nav>
-</footer>
 
 <script>
     // Vérification que l'utilisateur est administrateur

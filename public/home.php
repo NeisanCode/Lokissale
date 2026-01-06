@@ -1,7 +1,9 @@
 <?php require "inc/haut.inc.php" ?>
 <?php require "inc/menu.inc.php" ?>
 <?php require "../backend/salle.php" ?>
-<?php require_once "../config/database.php" ?>
+<?php require_once "../config/database.php";
+
+?>
 
 
 <main class="container-large">

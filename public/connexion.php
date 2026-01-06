@@ -33,6 +33,8 @@ require "../backend/connexion.php";
                 Pas encore de compte ? <a href="inscription.php">Créer un compte</a>
             </p>
         <?php else: ?>
+
+        <pre><?php print_r($_SESSION) ?></pre>
             <p style="text-align:center;">
                 Vous êtes déjà connecté. <br>
                 <a href="profil.php" class="btn">Aller à mon profil</a>

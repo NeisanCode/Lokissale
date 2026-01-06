@@ -1,6 +1,6 @@
 /* Styles spécifiques à la page d'envoi de newsletter */
 .container-large {
-    max-width: 1200px;
+    width: 100%;
     margin: 30px auto;
     background: var(--color-container-bg);
     padding: 25px;

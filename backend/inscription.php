@@ -42,20 +42,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'sexe' => $sexe,
             'ville' => $ville
         ]);
-
-        // Créer la session
-        $_SESSION['membre'] = [
-            'pseudo' => $pseudo,
-            'nom' => $nom,
-            'prenoms' => $prenoms,
-            'email' => $email,
-            'sexe' => $sexe,
-            'ville' => $ville
-        ];
-
+        $mail = $email;
         $membre_inscrit = $_SESSION['membre'];
         $message = "Inscription réussie. Bienvenue " . htmlspecialchars($pseudo) . " !";
         $message_type = 'success';
     }
+    $sql = "SELECT * FROM membre WHERE email=?";
+    $tmt = $pdo->prepare($sql);
+    $tmt->execute([$mail]);
+    $membre = $tmt->fetch();
+
+    
+    // Créer la session
+    $_SESSION['membre'] = $membre;
+    header("Location: profil.php");
+    exit();
 }
 ?>
