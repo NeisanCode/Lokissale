@@ -1,31 +1,57 @@
 <?php
-require_once "../config/connexion.php"; // Ta connexion BDD
-require_once "session.php";            // Doit contenir session_start()
+require_once "../config/connexion.php";
+require_once "session.php"; 
 
 $message = '';
 $message_type = '';
 $membre_connecte = null;
 
+// Initialisation une seule fois
+if (!isset($_SESSION['attempts'])) {
+    $_SESSION['attempts'] = 0;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $mdp = $_POST['password'];
 
-    // Ton traitement existant
-    $membre = checkUser($email);
+    if ($_SESSION['attempts'] >= 3) {
+        $message = "Trop de tentatives. Réessayez plus tard.";
+        $message_type = 'error';
 
-    if (!$membre) {
-        $message = "Aucun compte trouvé pour cet email.";
-        $message_type = 'error';
-    } elseif (!password_verify($mdp, $membre['mdp'])) {
-        $message = "Mot de passe incorrect.";
-        $message_type = 'error';
     } else {
-        $_SESSION['membre'] = $membre;
-        $membre_connecte = $membre;
-        $message = "Connexion réussie. Bienvenue " . htmlspecialchars($membre['pseudo']) . " !";
-        $message_type = 'success';
 
-        // Optionnel : redirection automatique après 2 secondes
-        header("Refresh: 1; url=profil.php");
+        $email = trim($_POST['email'] ?? '');
+        $mdp = $_POST['password'] ?? '';
+
+        if ($email === '' || $mdp === '') {
+            $message = "Tous les champs sont obligatoires.";
+            $message_type = 'error';
+        } else {
+
+            $membre = checkUser($email);
+
+            if (!$membre) {
+                $message = "Aucun compte trouvé pour cet email.";
+                $message_type = 'error';
+                $_SESSION['attempts']++;
+
+            } elseif (!password_verify($mdp, $membre['mdp'])) {
+                $_SESSION['attempts']++;
+                $message = "Mot de passe incorrect (" . $_SESSION['attempts'] . "/3).";
+                $message_type = 'error';
+
+            } else {
+                $_SESSION['attempts'] = 0; // reset
+                $_SESSION['membre'] = $membre;
+
+                $message = "Connexion réussie. Bienvenue " . htmlspecialchars($membre['pseudo']) . " !";
+                $message_type = 'success';
+
+                header("Location: profil.php");
+                exit;
+            }
+        }
     }
 }
+
+
+print_r($_SESSION["attempt"]);
