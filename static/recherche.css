@@ -28,6 +28,7 @@
 
 .recherche-form button:hover {
     background: var(--color-accent-dark);
+    font-weight: bold;
 }
 
 /* Bienvenue */

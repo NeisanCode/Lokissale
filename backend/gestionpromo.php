@@ -46,11 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 $message = "Erreur lors de la création du code promo.";
                 $messageType = 'error';
             }
-
-            // Pour la démo
-            // $message = "Code promo « $codePromo » créé avec succès ! Réduction de $reduction% applicable.";
-//    $messageType = 'success';
-            // }
         }
     }
 

@@ -1,12 +1,6 @@
 <?php
 require_once '../config/database.php';
 require_once 'session.php';
-require_once '../libs/PHPMailer/src/Exception.php';
-require_once '../libs/PHPMailer/src/PHPMailer.php';
-require_once '../libs/PHPMailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 
 if (isset($_SESSION['membre']['id_membre'])) {

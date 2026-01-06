@@ -16,12 +16,15 @@ require "../backend/salle.php";
     <section class="recherche-form">
         <form method="GET" action="">
             <label for="date_arrivee">Date d'arrivée</label>
-            <input type="date" id="date_arrivee" name="date_arrivee" required
+            <input type="date" id="date_arrivee" name="date_arrivee"
                 value="<?= isset($_GET['date_arrivee']) ? htmlspecialchars($_GET['date_arrivee']) : '' ?>">
 
             <label for="date_depart">Date de départ</label>
-            <input type="date" id="date_depart" name="date_depart" required
+            <input type="date" id="date_depart" name="date_depart"
                 value="<?= isset($_GET['date_depart']) ? htmlspecialchars($_GET['date_depart']) : '' ?>">
+            <label for="name">Nom</label>
+
+            <input type="text" name="titre" placeholder="Recherche par nom">
 
             <button type="submit">Rechercher</button>
         </form>
@@ -30,12 +33,6 @@ require "../backend/salle.php";
     <!-- Résultats de recherche -->
     <section class="offres" style="margin-top:40px;">
         <h3>Résultats de la recherche</h3>
-
-        <?php if ($message): ?>
-            <p style="<?= $message_type === 'error' ? 'color:red;' : '' ?>">
-                <?= htmlspecialchars($message) ?>
-            </p>
-        <?php endif; ?>
 
         <div class="offres-grid">
             <?php foreach ($salles as $salle): ?>
@@ -52,6 +49,16 @@ require "../backend/salle.php";
                 ) ?>
             <?php endforeach; ?>
         </div>
+
+
+        <?php if ($message): ?>
+            <div style="padding: 10px; border-radius: 5px; margin:20px 0; text-align: center; 
+                <?= $message_type === 'error' ? 'background-color: #f8d7da; color: #721c24;' : "" ?>
+                <?= $message_type === 'success' ? 'background-color: #d4edda; color: #155724;' : "" ?>">
+                <?= $message ?>
+            </div>
+
+        <?php endif; ?>
     </section>
 </main>
 
