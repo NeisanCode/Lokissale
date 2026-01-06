@@ -10,7 +10,20 @@
     </nav>
 </footer>
 
-<script src="js/inscription.js"></script>
+<script>
+    // Sélection du body et du menu
+    const body = document.querySelector('body');
+    const menu = document.querySelector('.menu');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    // Quand on clique sur le body
+    body.addEventListener('click', (e) => {
+        // Si le clic n'est pas sur le menu ou sur le bouton hamburger
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+            menu.classList.remove('active-menu');
+        }
+    });
+</script>
 </body>
 
 </html>
