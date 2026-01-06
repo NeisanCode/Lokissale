@@ -1,0 +1,135 @@
+j'ai fini de faire le projet pdf que je t'ai envoyé et voici son arboresence
+.
+├── backend
+│   ├── adminnewsletter.php
+│   ├── connexion.php
+│   ├── deconnexion.php
+│   ├── gestionavis.php
+│   ├── gestionmembre.php
+│   ├── gestionprod.php
+│   ├── gestionpromo.php
+│   ├── gestionsalle.php
+│   ├── gestionstat.php
+│   ├── inscription.php
+│   ├── mdp.php
+│   ├── newsletter.php
+│   ├── panier.php
+│   ├── product.php
+│   ├── profil.php
+│   ├── recherche.php
+│   ├── salle.php
+│   ├── session.php
+│   └── utils.php
+├── config
+│   ├── connexion.php
+│   ├── database.php
+│   ├── gestionsalle.php
+│   ├── produit.php
+│   └── recherche.php
+├── index.php
+├── public
+│   ├── adminnewsletter.php
+│   ├── assets
+│   │   ├── fonts
+│   │   └── images
+│   │       ├── background.jpg
+│   │       ├── cezanne.jpg
+│   │       ├── debussy.jpg
+│   │       ├── logo.ico
+│   │       ├── logo.png
+│   │       ├── matisse.jpg
+│   │       ├── monet.jpg
+│   │       ├── mozart.jpg
+│   │       ├── picasso.jpg
+│   │       └── renoir.jpg
+│   ├── cgv.php
+│   ├── connexion.php
+│   ├── contact.php
+│   ├── deconnexion.php
+│   ├── gestionavis.php
+│   ├── gestionmembre.php
+│   ├── gestionprod.php
+│   ├── gestionpromo.php
+│   ├── gestionsalle.php
+│   ├── gestionstat.php
+│   ├── home.php
+│   ├── inc
+│   │   ├── bas.inc.php
+│   │   ├── haut.inc.php
+│   │   ├── menu_func.php
+│   │   └── menu.inc.php
+│   ├── inscription.php
+│   ├── mdp.php
+│   ├── mentions.php
+│   ├── newsletter.php
+│   ├── panier.php
+│   ├── plan.php
+│   ├── profil.php
+│   ├── recherche.php
+│   ├── reservation_details.php
+│   └── reservation.php
+├── README.md
+├── shema.txt
+├── sql
+│   ├── membre.sql
+│   └── script.sql
+└── static
+    ├── adminnewsletter.css
+    ├── connexion.css
+    ├── deconnexion.css
+    ├── gestionavis.css
+    ├── gestionmembre.css
+    ├── gestionprod.css
+    ├── gestionpromo.css
+    ├── gestionsalle.css
+    ├── gestionstat.css
+    ├── mdp.css
+    ├── newsletter.css
+    ├── panier.css
+    ├── plansite.css
+    ├── presentation.css
+    ├── profil.css
+    ├── recherche.css
+    ├── reservations_details.css
+    ├── style.css
+    └── welcome.css
+
+10 directories, 84 files
+
+
+
+pour faire ce projet j'ai du telecharger le serveur php sur le site https://www.php.net/downloads.php
+et ajouter les fichier a mes variable d'environnement puis je lance le server avec la commande> php -S localhost:3000
+
+ce code n'a pas besoin de trop de configuration pour tourner
+voici les prerequis pour demarrer ce code sur une machine windows
+installer php 
+creer une base de donnée mysql
+recuperer ces identifiant
+aller dans le fichier config/database.php ->
+<?php
+$user = "xxxx";
+$pass = "xxxx";
+$host = "xxxx";
+$port = "xxxx";
+$dbname="xxxx";
+try {
+    $pdo = new PDO("mysql:host=$host:$port;dbname=$dbname;charset=utf8", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+
+
+
+
+mettre les identifiant de sa database
+une fois fait au niveau de la databse on doit etre conforme avec le shema de base de donnée
+on doit aller dans sa databse depuis n'importe quelle sgbd et importer le fichier sql/script.sql
+le fichier sql/membre.sql est fait de maniere a connaitre les mot de passe et email des utilisateur factisse car dans la database c'est chiffré
+une fois etablit on lance avec la commande de serveur php
+
+
+fais moi un fichier md detaillant chaque procedure mais avec une section installation et une section presentation du projet
+et met le lien du site officiele-> https://lokissale.infinityfree.me/?i=1
